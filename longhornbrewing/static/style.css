@@ -256,6 +256,9 @@ body {
   background: #fff;
   font: 16px/22px 'Cuprum', Arial, Verdana;
 }
+body {
+  min-height: 100%;
+}
 blockquote,
 q {
   quotes: none;
@@ -305,6 +308,7 @@ aside {
 }
 div#wrapper {
   width: 100%;
+  min-height: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -348,12 +352,14 @@ header#header #logo {
   cursor: pointer;
   position: relative;
   display: block;
-  top: 5px;
-  left: -10%;
+  margin: 5px auto 0;
 }
 header#header #logo img {
   width: 100%;
   height: auto;
+}
+header#header div.menu-icon {
+  display: none;
 }
 header#header ul {
   text-align: justify;
@@ -1209,13 +1215,13 @@ header#header ul.right {
   content: '';
 }
 .section.transition-form {
-  padding-bottom: 20px;
+  margin-bottom: 50px;
 }
 .section.transition-to {
   padding-top: 20px;
 }
 .section.section-first {
-  padding-top: 200px;
+  //padding-top: 250px;
 }
 .section.section-last {
   overflow: hidden;
@@ -1224,7 +1230,8 @@ header#header ul.right {
   height: 10000px;
   width: 50%;
   position: absolute;
-  bottom: -155px;
+  //bottom: -155px;
+  top: 0;
   overflow: hidden;
   z-index: 1;
 }
@@ -1274,7 +1281,8 @@ header#header ul.right {
 }
 .section .half-pattern .rotate {
   width: 8000px;
-  height: 800px;
+  //height: 800px;
+  height: 100%;
   position: absolute;
   bottom: 890px;
   overflow: hidden;
@@ -1288,12 +1296,17 @@ header#header ul.right {
 }
 footer {
   z-index: 101;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  //bottom: 0;
   width: 100%;
-  height: 250px;
+  min-height: 250px;
 }
-footer div {
+footer ul {
+  display: block;
+  list-style: none;
+  overflow: hidden;
+}
+footer ul li {
   float: left;
   text-align: center;
   width: 21%;
@@ -6031,6 +6044,108 @@ footer div {
 /*------------------------------------------------------------------
 [10. Responsive css]
 */
+@media (max-width: 767px) {
+  header#header nav#nav-menu {
+    display: none;
+  }
+  header#header label#menu-icon {
+    font-size: 32px;
+    display: block;
+    position: relative;
+    width: 40px;
+    height: 36px;
+    top: 40px;
+    text-align: center;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    background-color: #eee;
+    border-radius: 3px;
+    margin-bottom: 6px;
+    margin-left: auto;
+    margin-right: 11px;
+  }
+  header#header label#menu-icon:before {
+    content: "";
+    position: absolute;
+    top: 0.25em;
+    left: 4px;
+    width: 1em;
+    height: 0.125em;
+    border-top: 0.375em double #333;
+    border-bottom: 0.125em solid #333;
+    box-sizing: content-box;
+  }
+  header#header input[type="checkbox"]#menu-icon-chbox:checked ~ label#menu-icon {
+    background-color: #333;
+  }
+  header#header input[type="checkbox"]#menu-icon-chbox:checked ~ label#menu-icon:before {
+    border-top: 0.375em double #eee;
+    border-bottom: 0.125em solid #eee;
+  }
+  header#header input[type="checkbox"]#menu-icon-chbox:checked ~ nav#nav-menu {
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    right: 20px;
+    left: 20px;
+  }
+  header#header nav#nav-menu ul {
+    width: 100%;
+  }
+  header#header nav#nav-menu ul li {
+    display: block;
+    float: none;
+    width: 100%;
+    text-align: center;
+    background: #222;
+    text-indent: 0px;
+    margin: 0;
+    padding: 0;
+    border-bottom: solid 1px #a57e53;
+  }
+  header#header nav#nav-menu ul li:first-child {
+    border-top: solid 1px #a57e53;
+  }
+  header#header ul li:after {
+    display: none;
+  }
+  header#header nav#nav-menu ul li a {
+    display: block;
+    padding: 25px;
+  }
+  footer ul li {
+    width: 96%;
+  }
+}
+@media (max-width: 479px) {
+  header#header #logo {
+    text-align: center;
+  }
+  header#header #logo img {
+    width: 90%;
+  }
+}
+@media (min-width: 480px) and (max-width: 767px) {
+  header#header #logo {
+    text-align: center;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  header#header {
+    position: fixed;
+  }
+  header#header #logo {
+    top: 20px;
+  }
+  header#header ul li {
+    font-size: 23px;
+  }
+  header#header ul li:after {
+    left: 5px;
+  }
+}
 @media (min-width: 768px) {
   header#header.off-canvas {
     top: -145px;
@@ -6186,7 +6301,7 @@ footer div {
     float: right;
   }
   .section.transition-form {
-    padding-bottom: 270px;
+    margin-bottom: 50px;
   }
   .section.transition-to {
     padding-top: 370px;
@@ -6305,7 +6420,7 @@ footer div {
     border-top-width: 90px;
   }
   .section.transition-form {
-    padding-bottom: 270px;
+    margin-bottom: 50px;
   }
   .section.transition-to {
     padding-top: 395px;
@@ -6333,7 +6448,7 @@ footer div {
     margin-top: 5px;
   }
   .section.transition-form {
-    padding-bottom: 280px;
+    margin-bottom: 50px;
   }
   .section.transition-to {
     padding-top: 405px;
