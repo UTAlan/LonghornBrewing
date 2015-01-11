@@ -353,12 +353,13 @@ header#header #logo {
   position: relative;
   display: block;
   margin: 5px auto 0;
+  width: 293px;
 }
 header#header #logo img {
   width: 100%;
   height: auto;
 }
-header#header div.menu-icon {
+header#header #menu-icon-chbox, header#header #menu-icon {
   display: none;
 }
 header#header ul {
@@ -6138,6 +6139,7 @@ footer ul li {
   }
   header#header #logo {
     top: 20px;
+    width: 250px;
   }
   header#header ul li {
     font-size: 23px;
