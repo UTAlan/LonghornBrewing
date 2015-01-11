@@ -4,4 +4,4 @@ local_settings.py
 
 *.pyc
 
-passenger_wsgy.py
+passenger_wsgi.py
