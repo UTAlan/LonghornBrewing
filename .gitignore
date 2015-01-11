@@ -3,3 +3,5 @@ lbc_env/
 local_settings.py
 
 *.pyc
+
+passenger_wsgy.py
