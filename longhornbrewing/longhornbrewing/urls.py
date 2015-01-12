@@ -8,7 +8,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'longhornbrewing.views.index', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+    url(r'^tweets$', 'longhornbrewing.tweets.index', name='tweets'),
 
     url(r'^admin/', include(admin.site.urls)),
 )

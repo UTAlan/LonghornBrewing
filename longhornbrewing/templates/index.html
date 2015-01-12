@@ -1,67 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Basic Page Needs
-    ++++++++++++++++++++++++++++++++++++++ -->
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+{% extends "base.html" %}
 
-    <!-- Title
-    ++++++++++++++++++++++++++++++++++++++ -->
-    <title>Longhorn Brewing Company</title>
-
-    <!-- CSS
-    ++++++++++++++++++++++++++++++++++++++ -->
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/static/css/owl.carousel.min.css" />
-    <link rel="stylesheet" href="/static/css/animate.min.css" />
-    <link rel="stylesheet" href="/static/css/swipebox.min.css" />
-    <link rel="stylesheet" href="/static/style.css">
-
-    <!-- Google fonts
-    ++++++++++++++++++++++++++++++++++++++ -->
-    <link href='http://fonts.googleapis.com/css?family=Cuprum:400,400italic,700,700italic' rel='stylesheet' type='text/css' />
-
-    <!-- Favicons
-    ++++++++++++++++++++++++++++++++++++++ -->
-    <link rel="shortcut icon" href="/static/images/favicon.ico">
-    <link rel="apple-touch-icon" href="/static/images/apple-touch-icon.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/static/images/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/static/images/apple-touch-icon-114x114.png">
-
-    <!-- HTML5 Support for IE < 9
-    ++++++++++++++++++++++++++++++++++++++ -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-<div id="wrapper">
-    <header id="header" class="color-scheme-8 switcher-item-1">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-4 col-md-offset-0">
-                    <a href="#" id="logo" class="tada animated"><img src="/static/images/logo.png" alt=""></a>
-                </div>
-		<div class="col-sm-8 col-sm-offset-0 col-md-8 col-md-offset-0">
-                	<input type="checkbox" name="menu-icon-chbox" id="menu-icon-chbox" />
-                	<label id="menu-icon" for="menu-icon-chbox"></label>
-                	<nav id="nav-menu">
-                	    <ul class="nav right">
-                	        <li><a href="/">HOME</a></li>
-                	        <li><a href="/beers">OUR BEERS</a></li>
-                	        <li><a href="/events">EVENTS</a></li>
-                	        <li><a href="/store">STORE</a></li>
-                	        <li><a href="/contact">CONTACT US</a></li>
-                	    </ul>
-                	</nav>
-		</div>
-            </div>
-        </div>
-    </header>
+{% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
             <h2 id="home" class="big-heading">Welcome</h2>
@@ -72,28 +11,4 @@
             </div>
         </div>
     </section>
-
-    <footer class="color-scheme-7">
-        <ul>
-            <li class="social"><h5 class="wow zoomIn">Social Links</h5></li>
-            <li class="tweets"><h5 class="wow zoomIn">Latest Tweets</h5></li>
-            <li class="events"><h5 class="wow zoomIn">Upcoming Events</h5></li>
-            <li class="contact"><h5 class="wow zoomIn">Contact Info</h5></li>
-        </ul>
-    </footer>
-
-    <script src="/static/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-    <script src="/static/js/modernizr.custom.min.js" type="text/javascript"></script>
-    <script src="/static/js/retina.min.js" type="text/javascript"></script>
-    <script src="/static/js/owl.carousel.min.js" type="text/javascript"></script>
-    <script src="/static/js/jquery.shuffle.min.js" type="text/javascript"></script>
-    <script src="/static/js/wow.min.js" type="text/javascript"></script>
-    <script src="/static/js/custom.js" type="text/javascript"></script>
-    <!--
-    <script src="/static/js/SmoothScroll.min.js" type="text/javascript"></script>
-    <script src="/static/js/jquery.scrollbox.js" type="text/javascript"></script>
-    <script src="/static/js/jquery.scrollstop.min.js" type="text/javascript"></script>
-    <script src="/static/js/jquery.swipebox.min.js" type="text/javascript"></script>
-    -->
-</body>
-</html>
+{% endblock %}

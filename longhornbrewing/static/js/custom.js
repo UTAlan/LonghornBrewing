@@ -20,18 +20,6 @@
             $('span', this).css('width', value+'%');
         });
 
-        /* Default settings: scrollbox
-	    ================================================== */
-        $('.scrollbox').scrollbox({
-
-            direction: 'h',
-            linear: true,
-            step: 1,
-            delay: 0,
-            speed: 50
-
-        });
-
         /* Default settings: owl carousel
 	    ================================================== */
         $(".owl-carousel").owlCarousel({
@@ -162,19 +150,6 @@
 
     });
 
-    /* Initialize swipebox plugin (jQuery lightbox plugin)
-    ================================================== */
-    $( '.swipebox' ).swipebox( {
-        useCSS : false, // false will force the use of jQuery for animations
-        useSVG : false, // false to force the use of png for buttons
-        initialIndexOnArray : 0, // which image index to init when a array is passed
-        hideCloseButtonOnMobile : false, // true will hide the close button on mobile devices
-        hideBarsDelay : 0, // delay before hiding bars on desktop
-        videoMaxWidth : 1140, // videos max widthg
-        afterOpen: null, // called after opening
-        loopAtEnd: false // true will return to the first image after the last image is reached
-    } );
-
     /* WOW plugin triggers animation.css on scroll
     ================================================== */
     new WOW({
@@ -182,5 +157,18 @@
         offset: 0, // distance to the element when triggering the animation (default is 0)
         mobile: false // trigger animations on mobile devices (true is default)
     }).init();
+
+    // Twitter feed
+    $.post({
+        url: 'tweets',
+        datatype:'json',
+        success: function(data, textStatus, xhr) {
+            var html = '';
+            for (var i = 0; i < data.length; i++) {
+               html = html +'<li class="latest-tweet"><p>' + data[i] + '</p></li>';
+            }
+            $('#tweets').append(html);
+        }
+    });
 
 })(jQuery);
