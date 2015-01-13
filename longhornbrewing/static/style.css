@@ -1321,6 +1321,11 @@ footer ul li {
   width: 21%;
   margin: 15px 2%;
 }
+footer div#tweets div.tweet {
+  width: 100%;
+  display: block;
+  height: auto;
+}
 /*------------------------------------------------------------------
 [6. priority sections]
 */

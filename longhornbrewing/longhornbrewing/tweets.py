@@ -1,7 +1,7 @@
 # -*- encoding: utf-8 -*-
 from __future__ import unicode_literals
 import requests
-from requests_oauthlib import OAuth1
+from requests_oauthlib import OAuth1, OAuth1Session
 from urlparse import parse_qs
 from django.http import HttpResponse
 import json
@@ -48,7 +48,7 @@ def setup_oauth():
 
 
 def get_oauth():
-    oauth = OAuth1(CONSUMER_KEY,
+    oauth = OAuth1Session(CONSUMER_KEY,
                 client_secret=CONSUMER_SECRET,
                 resource_owner_key=OAUTH_TOKEN,
                 resource_owner_secret=OAUTH_TOKEN_SECRET)
@@ -68,8 +68,9 @@ def get_oauth():
 def index(request):
     lResume = []
     oauth = get_oauth()
-    r = requests.get(url="https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=UTAlan&count=8th=oauth")
+    url = "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=UTAlan&count=3&auth=oauth"
+    r = oauth.get(url)
     lTweets = r.json()
     for dTweet in lTweets:
         lResume.append(dTweet['text'])
-    return HttpResponse(json.dumps(lResume),mimetype="application/json")
+    return HttpResponse(json.dumps(lResume), content_type="application/json")

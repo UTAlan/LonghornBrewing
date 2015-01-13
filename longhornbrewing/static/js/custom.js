@@ -1,6 +1,4 @@
-(function($) {
-    jQuery(document).ready(function($) {
-
+$(document).ready(function() {
         /* Creation of additional elements
 	    ================================================== */
         $('.section').wrapInner('<article class="contents"></article>');
@@ -18,16 +16,6 @@
         $('.progress-bar').each(function(i) {
             var value = $(this).data('value');
             $('span', this).css('width', value+'%');
-        });
-
-        /* Default settings: owl carousel
-	    ================================================== */
-        $(".owl-carousel").owlCarousel({
-
-            slideSpeed: 300,
-            paginationSpeed: 400,
-            singleItem: true
-
         });
 
         /* Up arrow when scrolling
@@ -89,8 +77,6 @@
             return false;
         });
 
-    });
-    $(function() {
         /* Position header
 	    ================================================== */
         var scroll = $(document).scrollTop();
@@ -148,7 +134,6 @@
             });
         });
 
-    });
 
     /* WOW plugin triggers animation.css on scroll
     ================================================== */
@@ -159,16 +144,24 @@
     }).init();
 
     // Twitter feed
-    $.post({
-        url: 'tweets',
+    $.ajax({
+        url: 'http://lbc.alanbeam.net/tweets',
+        type: 'GET',
         datatype:'json',
         success: function(data, textStatus, xhr) {
             var html = '';
             for (var i = 0; i < data.length; i++) {
-               html = html +'<li class="latest-tweet"><p>' + data[i] + '</p></li>';
+               html = html +'<div class="tweet">' + data[i] + '</div>';
             }
             $('#tweets').append(html);
+
+	    $("#tweets").owlCarousel({
+                slideSpeed : 300,
+                paginationSpeed : 400,
+                singleItem: true,
+		autoPlay: 5000,
+            });
         }
     });
 
-})(jQuery);
+});
