@@ -87,7 +87,7 @@ $(document).ready(function() {
             var scrolled = $(document).scrollTop();
 
             // optionally emulate non-fixed positioning behaviour
-
+            /*
             if (scrolled > headerHeight) {
                 $('#header').addClass('off-canvas');
             } else {
@@ -101,7 +101,7 @@ $(document).ready(function() {
                 //scrolling up
                 $('#header').addClass('fixed');
             }
-
+            */
             scroll = $(document).scrollTop();
         });
 
