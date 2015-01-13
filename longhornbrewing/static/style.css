@@ -1326,6 +1326,24 @@ footer div#tweets div.tweet {
   display: block;
   height: auto;
 }
+footer div#events div.event {
+  width: 100%;
+  display: block;
+  height: auto;
+  text-align: left;
+}
+footer div#contact {
+  text-align: left;
+}
+footer div#contact p {
+  margin-bottom: 10px;
+}
+.owl-carousel.owl-text-select-on .owl-item{
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+}
 /*------------------------------------------------------------------
 [6. priority sections]
 */
@@ -3189,6 +3207,10 @@ footer div#tweets div.tweet {
 }
 .color-scheme-7 .owl-carousel .owl-pagination .owl-page {
   background: #415883;
+  width: 10px;
+  height: 10px;
+  margin: 10px;
+  display: inline-block;
 }
 .color-scheme-7 .owl-carousel .owl-pagination .owl-page.active {
   background: #c4b49a;
