@@ -1,0 +1,10 @@
+{% load weekday %}
+
+
+{% for d, event in upcoming_events %}
+    <div class="event">
+        <h6 id='event_title'>{{ event.title }}</h6>
+        <p id='event_date'>{{ d|date:"F"}} {{ d.day }}, {{ d.year }}</p>
+        <p id='event_description'>{{ event.description }}</p>
+    </div>
+{% endfor %}

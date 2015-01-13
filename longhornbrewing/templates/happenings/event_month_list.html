@@ -1,0 +1,34 @@
+{% extends 'happenings/middle.html' %}
+
+{% load staticfiles happenings_tags calendar_tags %}
+
+{% block extra_head %}
+<link href=" {% static 'happenings/css/calendar.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+    <section class="section section-first priority-1 color-scheme-13 transition-form switcher-item-2">
+        <div class="container">
+            <h1>Event Calendar</h1>
+
+            <div class="row">
+                <div class="col-xs-8 col-xs-offset-0">
+                    <div id="event-calendar">
+                        {% show_my_calendar request %}
+                    </div>
+                </div>
+                <div class="col-xs-4 col-xs-offset-0">
+                    <div id="event_display">
+                        {% upcoming_events num=1 %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock content %}
+
+{% block extra_foot %}
+<script src="{% static 'happenings/js/calendar.js' %}"></script>
+{% endblock %}

@@ -54,24 +54,6 @@ $(document).ready(function() {
 
     });
 
-    /* Navigation
-    ================================================== */
-    $('.nav a,.next-section').on('click', function(e) {
-        
-        e.preventDefault();
-        $link = $(this).attr('href');
-
-        $('html, body').animate({ 
-            scrollTop: $($link).offset().top - 130 
-        },1500);
-            
-        var panelSecondConfig = {latency: 100};
-        $(window).on('scrollstop', panelSecondConfig, function() {
-            $('#header').addClass('fixed');
-        }); 
-
-    });
-
     /* Decorative line in the blog post
     ================================================== */
     $(window).load(function() {
@@ -121,7 +103,7 @@ $(document).ready(function() {
         paginationSpeed : 400,
         pagination: true,
         singleItem: true,
-        autoPlay: 5000,
+        autoPlay: 10000,
         stopOnHover: true,
         mouseDrag: false,
     });

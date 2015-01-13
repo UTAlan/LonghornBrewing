@@ -350,7 +350,7 @@ header#header {
 }
 header#header #logo {
   cursor: pointer;
-  position: relative;
+  position: absolute;
   display: block;
   margin: 5px auto 0;
   width: 293px;
@@ -418,6 +418,12 @@ header#header ul.right {
   height: 100%;
   z-index: 2;
   position: relative;
+}
+
+.month-arrow-right a, .month-arrow-left a {
+  display: block;
+  color: #000 !important;
+}
   /*------------------------------------------------------------------
     [5.1.01 typography]
     */
@@ -466,7 +472,6 @@ header#header ul.right {
   /*------------------------------------------------------------------
     [5.1.16 footer]
     */
-}
 .section .contents h1,
 .section .contents h2 {
   font-size: 80px;

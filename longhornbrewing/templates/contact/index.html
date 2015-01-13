@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block pageTitle %}Contact Us - {% endblock %}
+
+{% block content %}
+    <section class="section section-first priority-1 color-scheme-6 transition-form switcher-item-2">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <div class="row">
+                <div class="col-xs-4">
+                    <h4>Business Hours</h4>
+                    <p>Sunday: Closed</p>
+                    <p>Monday - Friday: 11am - 8pm</p>
+                    <p>Saturday: 1pm - 5pm</p>
+
+                    <h4>Tour Hours</h4>
+                    <p>Sunday: Closed</p>
+                    <p>Monday - Saturday: 2am - 4pm</p>
+                </div>
+
+                <div class="col-xs-4">
+                    <h4>Email</h4>
+                    <p><a href="mailto:longhorn@longhornbrewing.com">longhorn@longhornbrewing.com</a></p>
+
+                    <h4>Phone</h4>
+                    <p>(214) 555-5555</p>
+
+                    <h4>Address</h4>
+                    <p>1234 Main St.<br />Rockwall, TX 75000</p>
+                </div>
+
+                <div class="col-xs-4">
+                    <h4>Directions</h4>
+                    <p><a href="#" title="Link to Google Maps"><img src="{% static 'images/contact_map.png' %}" alt="Map" /></a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
