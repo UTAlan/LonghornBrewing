@@ -13,12 +13,12 @@
             <h1>Event Calendar</h1>
 
             <div class="row">
-                <div class="col-xs-8 col-xs-offset-0">
+                <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-0">
                     <div id="event-calendar">
                         {% show_my_calendar request %}
                     </div>
                 </div>
-                <div class="col-xs-4 col-xs-offset-0">
+                <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
                     <div id="event_display">
                         {% upcoming_events num=1 %}
                     </div>
