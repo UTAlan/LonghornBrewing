@@ -381,6 +381,7 @@ header#header ul li:after {
   position: relative;
   left: 15px;
   content: '|';
+  color: #5b1a1e;
 }
 header#header ul li:last-child:after {
   content: '';
@@ -608,6 +609,9 @@ header#header ul.right {
   text-align: center;
   margin-bottom: 50px;
 }
+.section .contents h5.beer_name {
+  margin-bottom: 20px;
+}
 footer h5 {
   font-size: 30px;
   font-family: 'KenyanCoffeeRg';
@@ -647,7 +651,7 @@ footer h5 {
   font-size: 18px;
   line-height: 33px;
   font-family: "Lobster1.4";
-  text-align: center;
+  //text-align: center;
 }
 .section .contents img {
   max-width: 100%;
@@ -1387,92 +1391,93 @@ footer div#contact p {
 */
 .color-scheme-1 {
   background: url(images/backgrounds/p-1.jpg) top center;
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 .rotate:before {
   background: url(images/backgrounds/p-1.jpg) top center;
 }
 .color-scheme-1 a {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 a:hover {
   color: #fff;
+  text-decoration: underline;
 }
 .color-scheme-1 h1.big-heading,
 .color-scheme-1 h2.big-heading {
   text-shadow: 5px 4px 0px #2f626c;
 }
 .color-scheme-1 h1 {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h1 .pattern-left {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h1 .pattern-left:after {
-  border-right-color: #f6e8c3;
+  border-right-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h1 .pattern-left:before {
-  border-left-color: #f6e8c3;
+  border-left-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h1 .pattern-right {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h1 .pattern-right:after {
-  border-left-color: #f6e8c3;
+  border-left-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h1 .pattern-right:before {
-  border-right-color: #f6e8c3;
+  border-right-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h2 {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h2 .pattern-left {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h2 .pattern-left:after {
-  border-right-color: #f6e8c3;
+  border-right-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h2 .pattern-left:before {
-  border-left-color: #f6e8c3;
+  border-left-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h2 .pattern-right {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h2 .pattern-right:after {
-  border-left-color: #f6e8c3;
+  border-left-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h2 .pattern-right:before {
-  border-right-color: #f6e8c3;
+  border-right-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h3 {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h3 .pattern-left {
-  color: #cb2027;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h3 .pattern-left:after {
-  border-right-color: #f6e8c3;
+  border-right-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h3 .pattern-left:before {
-  border-left-color: #f6e8c3;
+  border-left-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h3 .pattern-right {
-  color: #cb2027;
+  color: #FFF; //#cb2027;
 }
 .color-scheme-1 h3 .pattern-right:after {
-  border-left-color: #f6e8c3;
+  border-left-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h3 .pattern-right:before {
-  border-right-color: #f6e8c3;
+  border-right-color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h4 {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h5 {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 h6 {
-  color: #f6e8c3;
+  color: #FFF; //#f6e8c3;
 }
 .color-scheme-1 .owl-carousel .item {
   color: #000;
@@ -3125,10 +3130,11 @@ footer div#contact p {
   background: url(images/backgrounds/p-7.jpg) top center;
 }
 .color-scheme-7 a {
-  color: #eee;
+  color: #FFF; //#eee;
 }
 .color-scheme-7 a:hover {
-  color: #c4b49a;
+  //color: #c4b49a;
+  text-decoration: underline;
 }
 .color-scheme-7 h1.big-heading,
 .color-scheme-7 h2.big-heading {
@@ -3218,7 +3224,7 @@ footer div#contact p {
   display: inline-block;
 }
 .color-scheme-7 .owl-carousel .owl-pagination .owl-page.active {
-  background: #c4b49a;
+  background: #FFF; //#c4b49a;
 }
 .color-scheme-7 .grid-filter .filter {
   border-color: rgba(255, 255, 255, 0.2);
@@ -3415,10 +3421,10 @@ footer div#contact p {
   background: url(images/backgrounds/p-8.jpg) top center;
 }
 .color-scheme-8 a {
-  color: #6f292a;
+  color: #6f292a; // #FFF
 }
 .color-scheme-8 a:hover {
-  color: #f9ebd1;
+  color: #FFF; //#f9ebd1; //#6f292a;
 }
 .color-scheme-8 h1.big-heading,
 .color-scheme-8 h2.big-heading {
