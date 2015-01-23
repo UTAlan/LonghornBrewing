@@ -652,6 +652,7 @@ footer h5 {
   line-height: 33px;
   font-family: "Lobster1.4";
   //text-align: center;
+  margin-bottom: 25px;
 }
 .section .contents img {
   max-width: 100%;
@@ -3415,16 +3416,23 @@ footer div#contact p {
 }
 .color-scheme-8 {
   background: url(images/backgrounds/p-8.jpg) top center;
-  color: #333;
+  color: #FFF; // #333;
 }
 .color-scheme-8 .rotate:before {
   background: url(images/backgrounds/p-8.jpg) top center;
 }
 .color-scheme-8 a {
-  color: #6f292a; // #FFF
+  color: #FFF; // #6f292a; 
 }
 .color-scheme-8 a:hover {
-  color: #FFF; //#f9ebd1; //#6f292a;
+  color: #FFF; //#f9ebd1; // #6f292a; 
+  text-decoration: underline;
+}
+.color-scheme-8 nav#nav-menu a {
+  color: #6f292a;
+}
+.color-scheme-8 nav#nav-menu a:hover {
+  color: #FFF;
 }
 .color-scheme-8 h1.big-heading,
 .color-scheme-8 h2.big-heading {
@@ -3497,10 +3505,10 @@ footer div#contact p {
   color: #333;
 }
 .color-scheme-8 h5 {
-  color: #333;
+  color: #FFF; // #333;
 }
 .color-scheme-8 h6 {
-  color: #333;
+  color: #FFF; // #333;
 }
 .color-scheme-8 .owl-carousel .item {
   color: #832C2D;
