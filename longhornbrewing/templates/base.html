@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load staticfiles happenings_tags %}
+    {% load staticfiles happenings_tags copyrighttags %}
     <!-- Basic Page Needs
     ++++++++++++++++++++++++++++++++++++++ -->
     <meta charset="UTF-8" />
@@ -54,7 +54,7 @@
                 	<label id="menu-icon" for="menu-icon-chbox"></label>
                 	<nav id="nav-menu">
                 	    <ul class="nav right">
-                	        <li><a href="/">HOME</a></li>
+                	        <li><a href="/">THE BREWERY</a></li>
                 	        <li><a href="/beers">OUR BEERS</a></li>
                 	        <li><a href="/events">EVENTS</a></li>
                 	        <li><a href="/store">STORE</a></li>
@@ -69,30 +69,8 @@
     {% block content %}{% endblock %}
 
     {% block footer %}
-    <footer class="color-scheme-8">
+    <footer class="color-scheme-17">
         <ul>
-            <li class="social">
-                <h5 class="wow zoomIn">Social Links</h5>
-                <p>
-                    <a href="#"><img src="{% static 'images/social_facebook.png' %}" alt="Facebook" title="Facebook" /></a>
-                    <a href="#"><img src="{% static 'images/social_twitter.png' %}" alt="Twitter" title="Twitter" /></a>
-                </p>
-                <p>
-                    <a href="#"><img src="{% static 'images/social_linkedin.png' %}" alt="LinkedIn" title="LinkedIn" /></a>
-                    <a href="#"><img src="{% static 'images/social_foursquare.png' %}" alt="Foursquare" title="Foursquare" /></a>
-                </p>
-            </li>
-            <li class="tweets">
-                <h5 class="wow zoomIn">Latest Tweets</h5>
-                <div id="tweets" class="owl-carousel owl-theme"></div>
-            </li>
-            <li class="events">
-                <h5 class="wow zoomIn">Upcoming Events</h5>
-
-                <div id="events" class="owl-carousel owl-theme">
-                    {% upcoming_events %}
-                </div>
-            </li>
             <li class="contact">
                 <h5 class="wow zoomIn">Contact Info</h5>
                 <div id="contact">
@@ -106,7 +84,34 @@
                     <p>1234 Main St.<br />Rockwall, TX 75000 (<a href="#" title="Link to Google Maps">map</a>)</p>
                 </div>
             </li>
+            <li class="hours">
+                <h5 class="wow zoomIn">Brewery Hours</h5>
+                <div id="hours">
+                    <p>Sunday: Closed</p>
+                    <p>Monday - Friday: 11am - 8pm</p>
+                    <p>Saturday: 1pm - 5pm</p>
+                </div>
+            </li>
+            <li class="events">
+                <h5 class="wow zoomIn">Upcoming Events</h5>
+
+                <div id="events" class="owl-carousel owl-theme">
+                    {% upcoming_events %}
+                </div>
+            </li>
+            <li class="social">
+                <h5 class="wow zoomIn">Social Links</h5>
+                <p>
+                    <a href="#"><img src="{% static 'images/social_facebook.png' %}" alt="Facebook" title="Facebook" /></a>
+                    <a href="#"><img src="{% static 'images/social_twitter.png' %}" alt="Twitter" title="Twitter" /></a>
+                </p>
+                <p>
+                    <a href="#"><img src="{% static 'images/social_linkedin.png' %}" alt="LinkedIn" title="LinkedIn" /></a>
+                    <a href="#"><img src="{% static 'images/social_foursquare.png' %}" alt="Foursquare" title="Foursquare" /></a>
+                </p>
+            </li>
         </ul>
+        <p class="copy">Copyright &copy; {% getCopyrightYears %} Longhorn Brewing Company LLC</p>
     </footer>
     {% endblock %}
 

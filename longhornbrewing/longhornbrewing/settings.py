@@ -12,6 +12,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'longhornbrewing',
     'happenings',
+    'copyright',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -46,7 +47,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Happenings
 CALENDAR_START_DAY = 6
+
+# Copyright
+COPY_START_YEAR = 2015
 
 try:
     from local_settings import *
