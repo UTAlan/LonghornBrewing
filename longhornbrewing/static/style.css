@@ -6411,7 +6411,7 @@ footer p.copy {
     position: relative;
     width: 40px;
     height: 36px;
-    top: 40px;
+    top: 20px;
     text-align: center;
     cursor: pointer;
     -moz-user-select: none;
@@ -6479,8 +6479,9 @@ footer p.copy {
 @media (max-width: 479px) {
   header#header #logo {
     text-align: center;
-    width: 75%;
+    width: 100%;
     top: 10px;
+    position: relative;
   }
   header#header #logo img {
     width: 100%;
