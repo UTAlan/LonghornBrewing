@@ -357,8 +357,9 @@ header#header #logo {
   cursor: pointer;
   position: absolute;
   display: block;
-  margin: 5px 0 0 -225px;
+  margin: 5px 0 0 0;
   width: 400px;
+  left: 25px;
 }
 header#header #logo img {
   width: 100%;
@@ -6503,18 +6504,36 @@ footer p.copy {
 @media (max-width: 479px) {
   header#header #logo {
     text-align: center;
-    width: 100%;
+    width: 98%;
     top: 10px;
-    position: relative;
+    //position: relative;
+    left: 1%;
   }
   header#header #logo img {
     width: 100%;
   }
+  .section {
+    padding-top: 275px;
+  }
 }
 @media (min-width: 480px) and (max-width: 767px) {
   header#header #logo {
-    text-align: center;
-    width: 50%;
+    position: relative;
+    margin: 5px auto 0;
+    width: 400px;
+  }
+  header#header label#menu-icon {
+    position: absolute;
+    top: -235px;
+    right: 5px;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  header#header input[type="checkbox"]#menu-icon-chbox:checked ~ nav#nav-menu {
+    top: -175px;
+  }
+  .section {
+    padding-top: 275px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -6814,6 +6833,11 @@ footer p.copy {
   .transition {
     height: 620px;
     margin-top: -240px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  header#header #logo {
+    width: 300px;
   }
 }
 @media (min-width: 1200px) {
