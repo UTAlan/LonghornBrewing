@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load staticfiles %}
+
 {% block pageTitle %}Store - {% endblock %}
 
 {% block content %}
@@ -8,9 +10,142 @@
             <h1 id="home">Store</h1>
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
-                    <blockquote>The Old School is an HTML5 one-page template designed in vintage style. The template is fully ready to work and includes everything you need to build an HTML website. With our template you can easily create and customize your online portfolio, describe your team, illustrate your professional skills and manage your personal or company blog. The Old School is provided with a contact form.</blockquote>
+                    <table id="store_table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="{% static 'images/store/tshirt_white.jpg' %}" alt="White T-Shirt" class="store_image" /></td>
+                                <td>White T-Shirt</td>
+                                <td>Get a white t-shirt with our logo printed on the front!</td>
+                                <td>
+                                    $9.99
+                                    <input type="hidden" class="store_price" id="white_tshirt_price" value="9.99" />
+                                </td>
+                                <td><input type="text" class="store_qty" id="white_tshirt_qty" value="0" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="{% static 'images/store/tshirt_green.jpg' %}" alt="Green T-Shirt" class="store_image" /></td>
+                                <td>Green T-Shirt</td>
+                                <td>Get a green t-shirt with our logo printed on the front!</td>
+                                <td>
+                                    $9.99
+                                    <input type="hidden" class="store_price" id="green_tshirt_price" value="9.99" />
+                                </td>
+                                <td><input type="text" class="store_qty" id="green_tshirt_qty" value="0" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="{% static 'images/store/tshirt_red.jpg' %}" alt="Red T-Shirt" class="store_image" /></td>
+                                <td>Red T-Shirt</td>
+                                <td>Get a red t-shirt with our logo printed on the front!</td>
+                                <td>
+                                    $9.99
+                                    <input type="hidden" class="store_price" id="red_tshirt_price" value="9.99" />
+                                </td>
+                                <td><input type="text" class="store_qty" id="red_tshirt_qty" value="0" /></td>
+                            </tr>
+                            <tr>
+                                <td><img src="{% static 'images/store/beermug.jpg' %}" alt="Beer Mug" class="store_image" /></td>
+                                <td>Beer Mug</td>
+                                <td>Get a beer mug with our logo printed on the front!</td>
+                                <td>
+                                    $9.99
+                                    <input type="hidden" class="store_price" id="beer_mug_price" value="9.99" />
+                                </td>
+                                <td><input type="text" class="store_qty" id="beer_mug_qty" value="0" /></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>Subtotal:</td>
+                                <td>$<span id="subtotal">0.00</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>Tax:</td>
+                                <td>$<span id="tax">0.00</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>Shipping &amp; Handling:</td>
+                                <td>$<span id="shipping">0.00</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>Total</td>
+                                <td>$<span id="total">0.00</span></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><label for="additional_notes">Additional Notes:</label></td>
+                                <td><textarea name="additional_notes" id="additional_notes"></textarea></td>
+                                <td colspan="2">
+                                    <form name="_xclick" action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="cmd" value="_xclick">
+                                    <input type="hidden" name="business" value="r.alan.beam-facilitator@gmail.com">
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="hidden" name="item_name" value="Web Store">
+                                    <input type="hidden" name="amount" id="paypal_amt" value="0">
+                                    <input type="image" src="http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Make payments with PayPal - it's fast, free and secure!">
+                                    </form>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </section>
+{% endblock %}
+
+{% block extra_foot %}
+<script>
+$(function() {
+    $(".store_qty").change(function() {
+        var subtotal = 0;
+        var taxRate = 0.0825;
+        var tax = 0;
+        var shipping = 4.99;
+        var total = 0;
+        
+        $(".store_qty").each(function() {
+            if(!$.isNumeric($(this).val())) {
+                return;
+            }
+            // Get ID of Price from this.id
+            var id = $(this).attr("id");
+            var idArr = id.split('_');
+            idArr.pop();
+            var price_id = idArr.join('_') + '_price';
+
+            // Qty * Price
+            subtotal += $(this).val() * $("#" + price_id).val();
+        });
+
+        tax = subtotal * taxRate;
+        total = subtotal + tax + shipping;
+
+        $("#subtotal").html(subtotal.toFixed(2));
+        $("#tax").html(tax.toFixed(2));
+        $("#shipping").html(shipping.toFixed(2));
+        $("#total").html(total.toFixed(2));
+
+        $("#paypal_amt").val(total.toFixed(2));
+    });
+});
+</script>
 {% endblock %}

@@ -357,8 +357,8 @@ header#header #logo {
   cursor: pointer;
   position: absolute;
   display: block;
-  margin: 5px auto 0;
-  width: 350px;
+  margin: 5px 0 0 -225px;
+  width: 400px;
 }
 header#header #logo img {
   width: 100%;
@@ -481,7 +481,8 @@ header#header ul.right {
 .section .contents h1,
 .section .contents h2 {
   font-size: 80px;
-  font-family: 'Beauty_School_Dropout_II';
+  //font-family: 'Beauty_School_Dropout_II';
+  font-variant: small-caps;
   font-weight: normal;
   line-height: 70px;
   margin-bottom: 30px;
@@ -3436,7 +3437,7 @@ footer p.copy {
 }
 .color-scheme-8 a:hover {
   color: #FFF; //#f9ebd1; // #6f292a; 
-  text-decoration: underline;
+  //text-decoration: underline;
 }
 .color-scheme-8 nav#nav-menu a {
   color: #6f292a;
@@ -6277,6 +6278,29 @@ footer p.copy {
 }
 .color-scheme-17 .next-section:after {
   border-top-color: #832C2D;
+}
+
+#store_table {
+  width: 100%;
+}
+#store_table th, #store_table td {
+  text-align: center;
+  vertical-align: middle;
+  padding-bottom: 10px;
+}
+#store_table td img.store_image {
+  border: solid 1px #000;
+  width: 125px;
+}
+#store_table td input.store_qty {
+  color: #000;
+  width: 26px;
+  text-align: center;
+}
+#store_table td textarea#additional_notes {
+  width: 75%;
+  height: 100px;
+  color: #000;
 }
 /*------------------------------------------------------------------
 [8. animation CSS3]
