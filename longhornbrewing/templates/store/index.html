@@ -4,6 +4,10 @@
 
 {% block pageTitle %}Store - {% endblock %}
 
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'fancybox/jquery.fancybox.css' %}" />
+{% endblock %}
+
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
@@ -17,48 +21,77 @@
                                 <th>Name</th>
                                 <th>Description</th>
                                 <th>Price</th>
+                                <th>Size</th>
                                 <th>Quantity</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><img src="{% static 'images/store/tshirt_white.jpg' %}" alt="White T-Shirt" class="store_image" /></td>
+                                <td><a id="white_tshirt_link" href="{% static 'images/store/tshirt_white.jpg' %}"><img src="{% static 'images/store/tshirt_white.jpg' %}" alt="White T-Shirt" class="store_image" /></a></td>
                                 <td>White T-Shirt</td>
                                 <td>Get a white t-shirt with our logo printed on the front!</td>
                                 <td>
                                     $9.99
                                     <input type="hidden" class="store_price" id="white_tshirt_price" value="9.99" />
                                 </td>
+                                <td>
+                                    <select class="store_size">
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                </td>
                                 <td><input type="text" class="store_qty" id="white_tshirt_qty" value="0" /></td>
                             </tr>
                             <tr>
-                                <td><img src="{% static 'images/store/tshirt_green.jpg' %}" alt="Green T-Shirt" class="store_image" /></td>
+                                <td><a id="green_tshirt_link" href="{% static 'images/store/tshirt_green.jpg' %}"><img src="{% static 'images/store/tshirt_green.jpg' %}" alt="Green T-Shirt" class="store_image" /></a></td>
                                 <td>Green T-Shirt</td>
                                 <td>Get a green t-shirt with our logo printed on the front!</td>
                                 <td>
                                     $9.99
                                     <input type="hidden" class="store_price" id="green_tshirt_price" value="9.99" />
                                 </td>
+                                <td>
+                                    <select class="store_size">
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                </td>
                                 <td><input type="text" class="store_qty" id="green_tshirt_qty" value="0" /></td>
                             </tr>
                             <tr>
-                                <td><img src="{% static 'images/store/tshirt_red.jpg' %}" alt="Red T-Shirt" class="store_image" /></td>
+                                <td><a id="red_tshirt_link" href="{% static 'images/store/tshirt_red.jpg' %}"><img src="{% static 'images/store/tshirt_red.jpg' %}" alt="Red T-Shirt" class="store_image" /></a></td>
                                 <td>Red T-Shirt</td>
                                 <td>Get a red t-shirt with our logo printed on the front!</td>
                                 <td>
                                     $9.99
                                     <input type="hidden" class="store_price" id="red_tshirt_price" value="9.99" />
                                 </td>
+                                <td>
+                                    <select class="store_size">
+                                        <option value="S">S</option>
+                                        <option value="M">M</option>
+                                        <option value="L">L</option>
+                                        <option value="XL">XL</option>
+                                        <option value="XXL">XXL</option>
+                                    </select>
+                                </td>
                                 <td><input type="text" class="store_qty" id="red_tshirt_qty" value="0" /></td>
                             </tr>
                             <tr>
-                                <td><img src="{% static 'images/store/beermug.jpg' %}" alt="Beer Mug" class="store_image" /></td>
+                                <td><a id="beer_mug_link" href="{% static 'images/store/beermug.jpg' %}"><img src="{% static 'images/store/beermug.jpg' %}" alt="Beer Mug" class="store_image" /></a></td>
                                 <td>Beer Mug</td>
                                 <td>Get a beer mug with our logo printed on the front!</td>
                                 <td>
                                     $9.99
                                     <input type="hidden" class="store_price" id="beer_mug_price" value="9.99" />
                                 </td>
+                                <td></td>
                                 <td><input type="text" class="store_qty" id="beer_mug_qty" value="0" /></td>
                             </tr>
                             <tr>
@@ -113,9 +146,41 @@
 {% endblock %}
 
 {% block extra_foot %}
+<script src="{% static 'fancybox/jquery.fancybox.js' %}" type="text/javascript"></script>
 <script>
-$(function() {
+$(document).ready(function() {
+    // fancybox
+    $("#white_tshirt_link").fancybox({
+        helpers: {
+            overlay: {
+                locked: false
+            }
+        }
+    });
+    $("#red_tshirt_link").fancybox({
+        helpers: {
+            overlay: {
+                locked: false
+            }
+        }
+    });
+    $("#green_tshirt_link").fancybox({
+        helpers: {
+            overlay: {
+                locked: false
+            }
+        }
+    });
+    $("#beer_mug_link").fancybox({
+        helpers: {
+            overlay: {
+                locked: false
+            }
+        }
+    });
+    
     $(".store_qty").change(function() {
+        // Calculate Totals
         var subtotal = 0;
         var taxRate = 0.0825;
         var tax = 0;
