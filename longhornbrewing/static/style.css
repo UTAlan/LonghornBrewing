@@ -1241,7 +1241,7 @@ footer h5 {
   content: '';
 }
 .section.transition-form {
-  margin-bottom: 50px;
+  padding-bottom: 50px;
 }
 .section.transition-to {
   padding-top: 20px;
@@ -6521,6 +6521,7 @@ footer p.copy {
     position: relative;
     margin: 5px auto 0;
     width: 400px;
+    left: 0;
   }
   header#header label#menu-icon {
     position: absolute;
