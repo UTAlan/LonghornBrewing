@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
@@ -16,7 +17,11 @@ urlpatterns = patterns('',
     url(r'^store/', include('store.urls', namespace='store')),
     url(r'^contact/', include('contact.urls', namespace='contact')),
 
+    url(r'^tinymce/', include('tinymce.urls')),
+
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.MEDIA_ROOT }),
 )
 
 urlpatterns += staticfiles_urlpatterns()

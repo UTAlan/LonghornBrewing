@@ -1,5 +1,6 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
+from contact.models import ContactPage
 
 def index(request):
     info = {}

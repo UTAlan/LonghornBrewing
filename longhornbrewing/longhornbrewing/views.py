@@ -2,6 +2,8 @@ from django.http import Http404
 from django.shortcuts import render
 from django.conf import settings
 
+from homepage.models import HomePage
+
 from calendar import month_name
 
 from happenings.utils.upcoming import UpcomingEvents
@@ -20,7 +22,11 @@ from bs4 import BeautifulSoup
 
 
 def index(request):
-    return render(request, 'index.html', {})
+    info = {}
+
+    info['homepage'] = HomePage.objects.get(id=1)
+
+    return render(request, 'index.html', { 'info': info })
 
 class EventMonthView(GenericEventView):
     template_name = 'happenings/event_month_list.html'

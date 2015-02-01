@@ -3,23 +3,21 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            <h1 id="home">Welcome</h1>
+            {% if info.homepage.title %}<h1 id="home">{{ info.homepage.title }}</h1>{% endif %}
+
+            {% if info.homepage.slogan %}
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
-                    <h5>​COMING SUMMER 2015 !</h5>
+                    <h5>​{{ info.homepage.slogan }}</h5>
+                </div>
             </div>
+            {% endif %}
 
+            {% if info.homepage.content %}
             <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1">
-                    <h6>Our Beer</h6>
-                    <blockquote>We handcraft all of our beers with pride and integrity. Artificial flavorings and gimmicks have no place in our products, and that is how it will stay. That is our promise to you.</blockquote>
-                </div>
-
-                <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2">
-                    <h6>Location</h6>
-                    <blockquote>We are proud of our hometown of Rockwall, and thrilled to be its first craft brewery. With the support of our fellow Texans, we look forward to serving excellent beer for many years to come!</blockquote>
-                </div>
+                {{ info.homepage.content|safe }}
             </div>
+            {% endif %}
         </div>
     </section>
 {% endblock %}

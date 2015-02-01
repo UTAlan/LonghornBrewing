@@ -72,23 +72,25 @@
             <li class="contact">
                 <h5 class="wow zoomIn">Contact Info</h5>
                 <div id="contact">
+                    {% if contactinfo.address1 or contactinfo.address2 %}
                     <h6>Address</h6>
-                    <p>1234 Main St.<br />Rockwall, TX 75000 (<a href="#" title="Link to Google Maps">map</a>)</p>
+                    <p>{% if contactinfo.address1 %}{{ contactinfo.address1 }}<br />{% endif %}{% if contactinfo.address2 %}{{ contactinfo.address2 }}{% endif %} (<a href="https://www.google.com/maps/place/{% if contactinfo.address1 %}{{ contactinfo.address1 }} {% endif %}{% if contactinfo.address2 %}{{ contactinfo.address2 }}{% endif %}" title="Link to Google Maps">map</a>)</p>
+                    {% endif %}
 
+                    {% if contactinfo.phone %}
                     <h6>Phone</h6>
-                    <p>(214) 555-5555</p>
+                    <p>{{ contactinfo.phone }}</p>
+                    {% endif %}
                     
+                    {% if contactinfo.email %}
                     <h6>Email</h6>
-                    <p><a href="mailto:longhorn@longhornbrewing.com">longhorn@longhornbrewing.com</a></p>
+                    <p><a href="mailto:{{ contactinfo.email }}">{{ contactinfo.email }}</a></p>
+                    {% endif %}
                 </div>
             </li>
             <li class="hours">
-                <h5 class="wow zoomIn">Brewery Hours</h5>
-                <div id="hours">
-                    <p>Sunday: Closed</p>
-                    <p>Monday - Friday: 11am - 8pm</p>
-                    <p>Saturday: 1pm - 5pm</p>
-                </div>
+                {% if contactinfo.business_hours_title %}<h5 class="wow zoomIn">{{ contactinfo.business_hours_title }}</h5>{% endif %}
+                {% if contactinfo.business_hours %}<p>{{ contactinfo.business_hours|linebreaksbr }}</p>{% endif %}
             </li>
             <li class="events">
                 <h5 class="wow zoomIn">Upcoming Events</h5>

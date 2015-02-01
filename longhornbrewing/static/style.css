@@ -1338,10 +1338,10 @@ footer ul li {
   width: 21%;
   margin: 15px 2%;
 }
-footer div#hours {
+footer li.hours {
   text-align: left;
 }
-footer div#hours p {
+footer li.hours p {
   margin-bottom: 10px;
 }
 footer div#events div.event {

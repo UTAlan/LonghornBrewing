@@ -7,33 +7,36 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            <h1>Contact Us</h1>
+            {% if contactinfo.title %}<h1>{{ contactinfo.title }}</h1>{% endif %}
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-                    <h4>Business Hours</h4>
-                    <p>Sunday: Closed</p>
-                    <p>Monday - Friday: 11am - 8pm</p>
-                    <p>Saturday: 1pm - 5pm</p>
+                    {% if contactinfo.business_hours_title %}<h4>{{ contactinfo.business_hours_title }}</h4>{% endif %}
+                    {% if contactinfo.business_hours %}<p>{{ contactinfo.business_hours|linebreaksbr }}</p>{% endif %}
 
-                    <h4>Tour Hours</h4>
-                    <p>Sunday: Closed</p>
-                    <p>Monday - Saturday: 2am - 4pm</p>
+                    {% if contactinfo.tour_hours_title %}<h4>{{ contactinfo.tour_hours_title }}</h4>{% endif %}
+                    {% if contactinfo.tour_hours %}<p>{{ contactinfo.tour_hours|linebreaksbr }}</p>{% endif %}
                 </div>
 
                 <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-                    <h4>Email</h4>
-                    <p><a href="mailto:longhorn@longhornbrewing.com">longhorn@longhornbrewing.com</a></p>
-
-                    <h4>Phone</h4>
-                    <p>(214) 555-5555</p>
-
+                    {% if contactinfo.address1 or contactinfo.address2 %}
                     <h4>Address</h4>
-                    <p>1234 Main St.<br />Rockwall, TX 75000</p>
+                    <p>{% if contactinfo.address1 %}{{ contactinfo.address1 }}<br />{% endif %}{% if contactinfo.address2 %}{{ contactinfo.address2 }}{% endif %}</p>
+                    {% endif %}
+
+                    {% if contactinfo.phone %}
+                    <h4>Phone</h4>
+                    <p>{{ contactinfo.phone }}</p>
+                    {% endif %}
+
+                    {% if contactinfo.email %}
+                    <h4>Email</h4>
+                    <p><a href="mailto:{{ contactinfo.email }}">{{ contactinfo.email }}</a></p>
+                    {% endif %}
                 </div>
 
                 <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
-                    <h4>Directions</h4>
-                    <p><a href="#" title="Link to Google Maps"><img src="{% static 'images/contact_map.png' %}" alt="Map" /></a></p>
+                    {% if contactinfo.map_title %}<h4>{{ contactinfo.map_title}}</h4>{% endif %}
+                    {% if contactinfo.map_image %}<p>{% if contactinfo.address1 or contactinfo.address2 %}<a href="https://www.google.com/maps/place/{% if contactinfo.address1 %}{{ contactinfo.address1 }} {% endif %}{% if contactinfo.address2 %}{{ contactinfo.address2 }}{% endif %}" title="Link to Google Maps"><img src="{{ contactinfo.map_image.url }}" alt="Map" /></a>{% else %}<img src="{{ contactinfo.map_image.url }}" alt="Map" />{% endif %}</p>{% endif %}
                 </div>
             </div>
         </div>

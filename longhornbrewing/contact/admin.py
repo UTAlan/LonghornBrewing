@@ -1,3 +1,7 @@
 from django.contrib import admin
+from contact.models import ContactPage
 
-# Register your models here.
+class ContactPageAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+admin.site.register(ContactPage, ContactPageAdmin)

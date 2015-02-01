@@ -26,15 +26,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for product in info.products %}
                             <tr>
-                                <td><a id="white_tshirt_link" href="{% static 'images/store/tshirt_white.jpg' %}"><img src="{% static 'images/store/tshirt_white.jpg' %}" alt="White T-Shirt" class="store_image" /></a></td>
-                                <td>White T-Shirt</td>
-                                <td>Get a white t-shirt with our logo printed on the front!</td>
                                 <td>
-                                    $9.99
-                                    <input type="hidden" class="store_price" id="white_tshirt_price" value="9.99" />
+                                    {% if product.image %}<a id="{{ product.html_id }}_link" href="{{ product.image.url }}"><img src="{{ product.image.url }}" alt="{{ product.name }}" class="store_image" /></a>{% endif %}
+                                </td>
+                                <td>{% if product.name %}{{ product.name }}{% endif %}</td>
+                                <td>{% if product.description %}{{ product.description|linebreaksbr }}{% endif %}</td>
+                                <td>
+                                    {% if product.price %}
+                                    ${{ product.price }}
+                                    <input type="hidden" class="store_price" id="{{ product.html_id }}_price" value="{{ product.price }}" />
+                                    {% endif %}
                                 </td>
                                 <td>
+                                    {% if product.display_sizes %}
                                     <select class="store_size">
                                         <option value="S">S</option>
                                         <option value="M">M</option>
@@ -42,58 +48,11 @@
                                         <option value="XL">XL</option>
                                         <option value="XXL">XXL</option>
                                     </select>
+                                    {% endif %}
                                 </td>
-                                <td><input type="text" class="store_qty" id="white_tshirt_qty" value="0" /></td>
+                                <td><input type="text" class="store_qty" id="{{ product.html_id }}_qty" value="0" /></td>
                             </tr>
-                            <tr>
-                                <td><a id="green_tshirt_link" href="{% static 'images/store/tshirt_green.jpg' %}"><img src="{% static 'images/store/tshirt_green.jpg' %}" alt="Green T-Shirt" class="store_image" /></a></td>
-                                <td>Green T-Shirt</td>
-                                <td>Get a green t-shirt with our logo printed on the front!</td>
-                                <td>
-                                    $9.99
-                                    <input type="hidden" class="store_price" id="green_tshirt_price" value="9.99" />
-                                </td>
-                                <td>
-                                    <select class="store_size">
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
-                                        <option value="XXL">XXL</option>
-                                    </select>
-                                </td>
-                                <td><input type="text" class="store_qty" id="green_tshirt_qty" value="0" /></td>
-                            </tr>
-                            <tr>
-                                <td><a id="red_tshirt_link" href="{% static 'images/store/tshirt_red.jpg' %}"><img src="{% static 'images/store/tshirt_red.jpg' %}" alt="Red T-Shirt" class="store_image" /></a></td>
-                                <td>Red T-Shirt</td>
-                                <td>Get a red t-shirt with our logo printed on the front!</td>
-                                <td>
-                                    $9.99
-                                    <input type="hidden" class="store_price" id="red_tshirt_price" value="9.99" />
-                                </td>
-                                <td>
-                                    <select class="store_size">
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
-                                        <option value="XXL">XXL</option>
-                                    </select>
-                                </td>
-                                <td><input type="text" class="store_qty" id="red_tshirt_qty" value="0" /></td>
-                            </tr>
-                            <tr>
-                                <td><a id="beer_mug_link" href="{% static 'images/store/beermug.jpg' %}"><img src="{% static 'images/store/beermug.jpg' %}" alt="Beer Mug" class="store_image" /></a></td>
-                                <td>Beer Mug</td>
-                                <td>Get a beer mug with our logo printed on the front!</td>
-                                <td>
-                                    $9.99
-                                    <input type="hidden" class="store_price" id="beer_mug_price" value="9.99" />
-                                </td>
-                                <td></td>
-                                <td><input type="text" class="store_qty" id="beer_mug_qty" value="0" /></td>
-                            </tr>
+                            {% endfor %}
                             <tr>
                                 <td></td>
                                 <td></td>
@@ -150,34 +109,15 @@
 <script>
 $(document).ready(function() {
     // fancybox
-    $("#white_tshirt_link").fancybox({
+    {% for product in info.products %}
+    $("#{{ product.html_id }}_link").fancybox({% verbatim %}{
         helpers: {
             overlay: {
                 locked: false
             }
         }
-    });
-    $("#red_tshirt_link").fancybox({
-        helpers: {
-            overlay: {
-                locked: false
-            }
-        }
-    });
-    $("#green_tshirt_link").fancybox({
-        helpers: {
-            overlay: {
-                locked: false
-            }
-        }
-    });
-    $("#beer_mug_link").fancybox({
-        helpers: {
-            overlay: {
-                locked: false
-            }
-        }
-    });
+    });{% endverbatim %}
+    {% endfor %}
     
     $(".store_qty").change(function() {
         // Calculate Totals
