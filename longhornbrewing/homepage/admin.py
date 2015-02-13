@@ -2,7 +2,7 @@ from django.contrib import admin
 from homepage.models import HomePage
 
 class HomePageAdmin(admin.ModelAdmin):
-    fields = ('title', 'slogan', 'content',)
+    #fields = ('title', 'slogan', 'content_left',)
     list_display = ('title',)
     
     #class Media:

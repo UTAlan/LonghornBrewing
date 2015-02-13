@@ -7,7 +7,7 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            {% if contactinfo.title %}<h1>{{ contactinfo.title }}</h1>{% endif %}
+            {% if contactinfo.title %}<h1{% if contactinfo.title_size %} style="font-size: {{ contactinfo.title_size }}px;"{% endif %}>{{ contactinfo.title }}</h1>{% endif %}
             <div class="row">
                 <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
                     {% if contactinfo.business_hours_title %}<h4>{{ contactinfo.business_hours_title }}</h4>{% endif %}

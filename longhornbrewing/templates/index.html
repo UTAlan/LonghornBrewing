@@ -3,21 +3,24 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            {% if info.homepage.title %}<h1 id="home">{{ info.homepage.title }}</h1>{% endif %}
+            {% if info.homepage.title %}<h1 id="home"{% if info.homepage.title_size %} style="font-size: {{ info.homepage.title_size }}px;"{% endif %}>{{ info.homepage.title }}</h1>{% endif %}
 
             {% if info.homepage.slogan %}
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
-                    <h5>​{{ info.homepage.slogan }}</h5>
+                    <h5{% if info.homepage.slogan_size %} style="font-size: {{ info.homepage.slogan_size }}px;"{% endif %}>​{{ info.homepage.slogan }}</h5>
                 </div>
             </div>
             {% endif %}
 
-            {% if info.homepage.content %}
             <div class="row">
-                {{ info.homepage.content|safe }}
+                <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+                    {{ info.homepage.content_left|safe }}
+                </div>
+                <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+                    {{ info.homepage.content_right|safe }}
+                </div>
             </div>
-            {% endif %}
         </div>
     </section>
 {% endblock %}

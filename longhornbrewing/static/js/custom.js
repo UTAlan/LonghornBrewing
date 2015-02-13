@@ -74,30 +74,6 @@ $(document).ready(function() {
         mobile: false // trigger animations on mobile devices (true is default)
     }).init();
 
-    // Twitter feed
-    $.ajax({
-        url: 'http://lbc.alanbeam.net/tweets',
-        type: 'GET',
-        datatype:'json',
-        success: function(data, textStatus, xhr) {
-            var html = '';
-            for (var i = 0; i < data.length; i++) {
-               html = html +'<div class="tweet">' + data[i] + '</div>';
-            }
-            $('#tweets').append(html);
-
-    	    $("#tweets").owlCarousel({
-                slideSpeed : 300,
-                paginationSpeed : 400,
-                singleItem: true,
-                autoPlay: 10000,
-                pagination: true,
-                stopOnHover: true,
-                mouseDrag: false,
-            });
-        }
-    });
-
     $("#events").owlCarousel({
         slideSpeed : 300,
         paginationSpeed : 400,
@@ -105,7 +81,7 @@ $(document).ready(function() {
         singleItem: true,
         autoPlay: 10000,
         stopOnHover: true,
-        mouseDrag: false,
+        mouseDrag: true,
     });
 
 });

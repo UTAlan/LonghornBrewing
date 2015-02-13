@@ -4,6 +4,7 @@ from django.contrib.auth.models import User, Group
 
 class ContactPage(models.Model):
     title = models.CharField(max_length=200,blank=True)
+    title_size = models.IntegerField(default=0)
     business_hours_title = models.CharField(max_length=200,blank=True)
     business_hours = models.TextField(blank=True)
     tour_hours_title = models.CharField(max_length=200,blank=True)
