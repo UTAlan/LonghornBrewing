@@ -6292,6 +6292,7 @@ footer p.copy {
 #store_table td img.store_image {
   border: solid 1px #000;
   width: 125px;
+  min-width: 50px;
 }
 #store_table td input.store_qty {
   color: #000;
