@@ -13,6 +13,7 @@ INSTALLED_APPS = (
     'longhornbrewing',
     'homepage',
     'beers',
+    'eventspage',
     'happenings',
     'store',
     'contact',
