@@ -23,7 +23,7 @@
 
             {% if info.products %}
             <div class="row">
-                <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-xs-12">
                     <table id="store_table">
                         <thead>
                             <tr>
@@ -94,7 +94,7 @@
                             <tr>
                                 <td></td>
                                 <td><label for="additional_notes">Additional Notes:</label></td>
-                                <td><textarea name="additional_notes" id="additional_notes"></textarea></td>
+                                <td colspan="2"><textarea name="additional_notes" id="additional_notes"></textarea></td>
                                 <td colspan="2">
                                     <form name="_xclick" action="https://www.paypal.com/us/cgi-bin/webscr" method="post">
                                     <input type="hidden" name="cmd" value="_xclick">
