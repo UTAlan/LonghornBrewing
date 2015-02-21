@@ -2,7 +2,7 @@ from django.http import Http404
 from django.shortcuts import render
 from django.conf import settings
 
-from homepage.models import HomePage
+from homepage.models import HomePage, SliderItem
 
 from calendar import month_name
 
@@ -25,6 +25,7 @@ def index(request):
     info = {}
 
     info['homepage'] = HomePage.objects.get(id=1)
+    info['slideritems'] = SliderItem.objects.filter(active=True).order_by('order').order_by('name')
 
     return render(request, 'index.html', { 'info': info })
 

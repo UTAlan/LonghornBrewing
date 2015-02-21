@@ -74,6 +74,16 @@ $(document).ready(function() {
         mobile: false // trigger animations on mobile devices (true is default)
     }).init();
 
+    $("#home-slider").owlCarousel({
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        pagination: false,
+        singleItem: true,
+        autoPlay: 5000,
+        stopOnHover: true,
+        mouseDrag: true,
+    })
+
     $("#events").owlCarousel({
         slideSpeed : 300,
         paginationSpeed : 400,

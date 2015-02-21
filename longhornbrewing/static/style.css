@@ -6281,6 +6281,10 @@ footer p.copy {
   border-top-color: #832C2D;
 }
 
+.slider_image {
+  height: 250px !important;
+}
+
 #store_table {
   width: 100%;
 }

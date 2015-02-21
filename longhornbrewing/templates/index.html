@@ -3,6 +3,22 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
+            {% if info.slideritems %}
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <div id="home-slider" class="owl-carousel">
+                        {% for item in info.slideritems %}
+                        <div>
+                            {% if item.link %}<a href="{{ item.link }}">{% endif %}
+                                <img src="{{ item.image.url }}" alt="{{ item.name }}" class="slider_image" />
+                            {% if item.link %}</a>{% endif %}
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
             {% if info.homepage.title %}<h1 id="home"{% if info.homepage.title_size %} style="font-size: {{ info.homepage.title_size }}px;"{% endif %}>{{ info.homepage.title }}</h1>{% endif %}
 
             {% if info.homepage.slogan %}

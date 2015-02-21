@@ -1,6 +1,4 @@
 from django.db import models
-from django.conf import settings
-from django.contrib.auth.models import User, Group
 from tinymce import models as tinymce_models
 
 class HomePage(models.Model):
@@ -13,3 +11,13 @@ class HomePage(models.Model):
     
     def __unicode__(self):
         return self.title
+
+class SliderItem(models.Model):
+    name = models.CharField(max_length=200,unique=True)
+    active = models.BooleanField(default=True)
+    order = models.IntegerField(default=0)
+    link = models.CharField(max_length=200,blank=True)
+    image = models.ImageField()
+    
+    def __unicode__(self):
+        return self.name
