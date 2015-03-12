@@ -7,7 +7,15 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            <h1 id="home">Our Beers</h1>
+            {% if ourbeer.title %}<h1 style="font-size: {{ ourbeer.title_size }}px; line-height: {{ ourbeer.title_size }}px;">{{ ourbeer.title }}</h1>{% endif %}
+
+            {% if ourbeer.slogan %}
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <h5 style="font-size: {{ ourbeer.slogan_size }}px; line-height: {{ ourbeer.slogan_size }}px;">​{{ ourbeer.slogan }}</h5>
+                </div>
+            </div>
+            {% endif %}
 
             {% for beer in info.beers %}
             <div class="row">

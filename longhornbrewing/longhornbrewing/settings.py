@@ -17,6 +17,7 @@ INSTALLED_APPS = (
     'happenings',
     'store',
     'contact',
+    'sociallinks',
     'copyright',
     'tinymce',
 )

@@ -81,7 +81,7 @@
                     <h6>Phone</h6>
                     <p>{{ contactinfo.phone }}</p>
                     {% endif %}
-                    
+
                     {% if contactinfo.email %}
                     <h6>Email</h6>
                     <p><a href="mailto:{{ contactinfo.email }}">{{ contactinfo.email }}</a></p>
@@ -101,14 +101,11 @@
             </li>
             <li class="social">
                 <h5 class="wow zoomIn">Social Links</h5>
-                <p>
-                    <a href="#"><img src="{% static 'images/social_facebook.png' %}" alt="Facebook" title="Facebook" /></a>
-                    <a href="#"><img src="{% static 'images/social_twitter.png' %}" alt="Twitter" title="Twitter" /></a>
+                {% for sociallink in sociallinks %}
+                <p class="sociallink">
+                    {% if sociallink.url %}<a href="{{ sociallink.url }}">{% endif %}<img src="{{ sociallink.image.url }}" alt="{{ sociallink.name }}" title="{{ sociallink.name }}" />{% if sociallink.url %}</a>{% endif %}
                 </p>
-                <p>
-                    <a href="#"><img src="{% static 'images/social_linkedin.png' %}" alt="LinkedIn" title="LinkedIn" /></a>
-                    <a href="#"><img src="{% static 'images/social_foursquare.png' %}" alt="Foursquare" title="Foursquare" /></a>
-                </p>
+                {% endfor %}
             </li>
         </ul>
         <p class="copy">Copyright &copy; {% getCopyrightYears %} Longhorn Brewing Company LLC</p>

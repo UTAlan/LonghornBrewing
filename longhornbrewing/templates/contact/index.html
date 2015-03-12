@@ -7,12 +7,12 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            {% if contactinfo.title %}<h1 style="font-size: {{ contactinfo.title_size }}px;">{{ contactinfo.title }}</h1>{% endif %}
+            {% if contactinfo.title %}<h1 style="font-size: {{ contactinfo.title_size }}px; line-height: {{ contactinfo.title_size }}px;">{{ contactinfo.title }}</h1>{% endif %}
 
             {% if contactinfo.slogan %}
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
-                    <h5 style="font-size: {{ contactinfo.slogan_size }}px;">​{{ contactinfo.slogan }}</h5>
+                    <h5 style="font-size: {{ contactinfo.slogan_size }}px; line-height: {{ contactinfo.slogan_size }}px;">​{{ contactinfo.slogan }}</h5>
                 </div>
             </div>
             {% endif %}

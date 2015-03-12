@@ -11,7 +11,7 @@
 5.1.01 typography
 5.1.02 service block / .service
 5.1.03 progress bar / .progress-bar
-5.1.04 vertical separator / .vertical-separator 
+5.1.04 vertical separator / .vertical-separator
 5.1.05 grid filter / .grid-filter
 5.1.06 owl carousel / .owl-carousel
 5.1.07 scrollbox / .scrollbox
@@ -1356,6 +1356,13 @@ footer div#contact {
 footer div#contact p {
   margin-bottom: 10px;
 }
+footer li.social p.sociallink {
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    text-align: center;
+}
 footer p.copy {
   padding: 0 0 10px 0;
   text-align: center;
@@ -1365,6 +1372,9 @@ footer p.copy {
     -moz-user-select: auto;
     -ms-user-select: auto;
     user-select: auto;
+}
+#home-slider {
+    margin-bottom: 30px;
 }
 #home-slider .owl-item {
     text-align: center;
@@ -3437,10 +3447,10 @@ footer p.copy {
   background: url(images/backgrounds/p-8.jpg) top center;
 }
 .color-scheme-8 a {
-  color: #FFF; // #6f292a; 
+  color: #FFF; // #6f292a;
 }
 .color-scheme-8 a:hover {
-  color: #FFF; //#f9ebd1; // #6f292a; 
+  color: #FFF; //#f9ebd1; // #6f292a;
   //text-decoration: underline;
 }
 .color-scheme-8 nav#nav-menu a {
@@ -6004,10 +6014,10 @@ footer p.copy {
   background: url(images/backgrounds/p-17.jpg) top center;
 }
 .color-scheme-17 a {
-  color: #FFF; // #6f292a; 
+  color: #FFF; // #6f292a;
 }
 .color-scheme-17 a:hover {
-  color: #FFF; //#f9ebd1; // #6f292a; 
+  color: #FFF; //#f9ebd1; // #6f292a;
   //text-decoration: underline;
 }
 .color-scheme-17 h1.big-heading,
