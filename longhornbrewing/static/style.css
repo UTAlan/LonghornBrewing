@@ -1366,6 +1366,9 @@ footer p.copy {
     -ms-user-select: auto;
     user-select: auto;
 }
+#home-slider .owl-item {
+    text-align: center;
+}
 /*------------------------------------------------------------------
 [6. priority sections]
 */

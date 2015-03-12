@@ -3,6 +3,8 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
+            {% if info.homepage.title %}<h1 id="home"{% if info.homepage.title_size %} style="font-size: {{ info.homepage.title_size }}px;"{% endif %}>{{ info.homepage.title }}</h1>{% endif %}
+
             {% if info.slideritems %}
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
@@ -15,11 +17,7 @@
                         </div>
                         {% endfor %}
                     </div>
-                </div>
-            </div>
-            {% endif %}
-
-            {% if info.homepage.title %}<h1 id="home"{% if info.homepage.title_size %} style="font-size: {{ info.homepage.title_size }}px;"{% endif %}>{{ info.homepage.title }}</h1>{% endif %}
+	    {% endif %}
 
             {% if info.homepage.slogan %}
             <div class="row">
