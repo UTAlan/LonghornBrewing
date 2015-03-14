@@ -77,9 +77,9 @@ $(document).ready(function() {
     $("#home-slider").owlCarousel({
         slideSpeed : 300,
         paginationSpeed : 400,
-        pagination: false,
+        pagination: true,
         singleItem: true,
-        autoPlay: 5000,
+        autoPlay: 3000,
         stopOnHover: true,
         mouseDrag: true,
     })

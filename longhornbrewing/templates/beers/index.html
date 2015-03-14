@@ -18,12 +18,14 @@
             {% endif %}
 
             {% for beer in info.beers %}
-            <div class="row">
+            <div class="row" style="margin-bottom: 50px">
+                <div class="col-xs-10 col-xs-offset-1">
+                    {% if beer.name %}<h5 class="beer_name">{{ beer.name }}</h5>{% endif %}
+                </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-1">
                     {% if beer.image %}<p><img src="{{ beer.image.url }}" alt="{{ beer.name }}" /></p>{% endif %}
                 </div>
                 <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1">
-                    {% if beer.name %}<h5 class="beer_name">{{ beer.name }}</h5>{% endif %}
                     {% if beer.description %}<p>{{ beer.description|linebreaksbr }}</p>{% endif %}
                 </div>
             </div>
