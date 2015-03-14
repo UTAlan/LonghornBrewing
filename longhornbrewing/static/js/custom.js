@@ -79,7 +79,7 @@ $(document).ready(function() {
         paginationSpeed : 400,
         pagination: true,
         singleItem: true,
-        autoPlay: 3000,
+        autoPlay: 2800,
         stopOnHover: true,
         mouseDrag: true,
     })
