@@ -7,7 +7,7 @@
 
             {% if info.slideritems %}
             <div class="row">
-                <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-xs-12">
                     <div id="home-slider" class="owl-carousel">
                         {% for item in info.slideritems %}
                         <div>
@@ -21,17 +21,17 @@
 
             {% if info.homepage.slogan %}
             <div class="row">
-                <div class="col-xs-10 col-xs-offset-1">
+                <div class="col-xs-12">
                     <h5{% if info.homepage.slogan_size %} style="font-size: {{ info.homepage.slogan_size }}px; line-height: {{ info.homepage.slogan_size }}px;"{% endif %}>​{{ info.homepage.slogan }}</h5>
                 </div>
             </div>
             {% endif %}
 
             <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+                <div class="col-xs-12 col-sm-5 col-sm-offset-1">
                     {{ info.homepage.content_left|safe }}
                 </div>
-                <div class="col-xs-10 col-xs-offset-1 col-sm-5 col-sm-offset-1">
+                <div class="col-xs-12 col-sm-5 col-sm-offset-1">
                     {{ info.homepage.content_right|safe }}
                 </div>
             </div>
