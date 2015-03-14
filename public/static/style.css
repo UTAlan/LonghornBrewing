@@ -620,6 +620,9 @@ header#header ul.right {
 .section .contents h5.beer_name {
   margin-bottom: 20px;
 }
+footer {
+    border-top: solid 2px #FFF;
+}
 footer h5 {
   font-size: 30px;
   font-family: 'KenyanCoffeeRg';
@@ -1364,12 +1367,6 @@ footer li.social p.sociallink {
     width: 50%;
     text-align: center;
 }
-footer div.social {
-    padding: 0 25%;
-}
-footer div.social p.sociallink {
-    float: left;
-}
 footer p.copy {
   padding: 0 0 10px 0;
   text-align: center;
@@ -1517,10 +1514,10 @@ footer p.copy {
   background: #f2eed9;
 }
 .color-scheme-1 .owl-carousel .owl-pagination .owl-page {
-  background: #f2eed9;
+  background: #FFF;
 }
 .color-scheme-1 .owl-carousel .owl-pagination .owl-page.active {
-  background: #cb2027;
+  background: #3f4041;
 }
 .color-scheme-1 .grid-filter .filter {
   border-color: #f6e8c3;
