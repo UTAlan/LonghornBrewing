@@ -352,6 +352,7 @@ header#header {
   width: 100%;
   height: 115px;
   z-index: 999;
+  border-bottom: solid 2px #FFF;
 }
 header#header #logo {
   cursor: pointer;
@@ -618,6 +619,9 @@ header#header ul.right {
 }
 .section .contents h5.beer_name {
   margin-bottom: 20px;
+}
+footer {
+    border-top: solid 2px #FFF;
 }
 footer h5 {
   font-size: 30px;
@@ -1510,10 +1514,10 @@ footer p.copy {
   background: #f2eed9;
 }
 .color-scheme-1 .owl-carousel .owl-pagination .owl-page {
-  background: #f2eed9;
+  background: #FFF;
 }
 .color-scheme-1 .owl-carousel .owl-pagination .owl-page.active {
-  background: #cb2027;
+  background: #3f4041;
 }
 .color-scheme-1 .grid-filter .filter {
   border-color: #f6e8c3;
@@ -3454,11 +3458,11 @@ footer p.copy {
   //text-decoration: underline;
 }
 .color-scheme-8 nav#nav-menu a {
-  color: #6f292a;
+  color: #FFF;
   text-decoration: none;
 }
 .color-scheme-8 nav#nav-menu a:hover {
-  color: #FFF;
+  color: #6f292a;
   text-decoration: none;
 }
 .color-scheme-8 h1.big-heading,
