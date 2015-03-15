@@ -20,6 +20,7 @@ INSTALLED_APPS = (
     'sociallinks',
     'copyright',
     'tinymce',
+    'bgs',
 )
 
 MIDDLEWARE_CLASSES = (
