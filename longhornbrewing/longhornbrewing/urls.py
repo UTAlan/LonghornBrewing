@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^events/', include('happenings.urls', namespace='events')),
     url(r'^calendar/', include('happenings.urls', namespace='calendar')),
     url(r'^store/', include('store.urls', namespace='store')),
+    url(r'^find-our-beer/', include('findus.urls', namespace='findus')),
     url(r'^contact/', include('contact.urls', namespace='contact')),
 
     url(r'^tinymce/', include('tinymce.urls')),

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block pageTitle %}{% if find_us.title %}{{ find_us.title }}{% else %} Find Our Beers{% endif %} - {% endblock %}
+
+{% block content %}
+    <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
+        <div class="container">
+            {% if find_us.title %}<h1 style="font-size: {{ find_us.title_size }}px; line-height: {{ find_us.title_size }}px;{% if find_us.title_color %} color: #{{ find_us.title_color }};{% endif %}{% if find_us.title_font %} font-family: {{ find_us.title_font }};{% endif %}">{{ find_us.title }}</h1>{% endif %}
+
+            {% if find_us.slogan %}
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1">
+                    <h5 style="font-size: {{ find_us.slogan_size }}px; line-height: {{ find_us.slogan_size }}px;{% if find_us.slogan_color %} color: #{{ find_us.slogan_color }};{% endif %}">​{{ find_us.slogan }}</h5>
+                </div>
+            </div>
+            {% endif %}
+
+            <div class="row">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1">
+                    {% if find_us.page_content %}<p>{{ find_us.page_content|safe }}</p>{% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
