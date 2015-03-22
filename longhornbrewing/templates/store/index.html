@@ -11,18 +11,20 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            {% if info.store.title %}<h1 id="home" style="font-size: {{ info.store.title_size }}px; line-height: {{ info.store.title_size }}px;">{{ info.store.title }}</h1>{% endif %}
+            {% if info.store.title %}<h1 id="home" style="font-size: {{ info.store.title_size }}px; line-height: {{ info.store.title_size }}px;{% if info.store.title_color %} color: #{{ info.store.title_color }};{% endif %}{% if info.store.title_font %} font-family: {{ info.store.title_font }};{% endif %}">{{ info.store.title }}</h1>{% endif %}
 
             {% if info.store.slogan %}
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
-                    <h5 style="font-size: {{ info.store.slogan_size }}px; line-height: {{ info.store.slogan_size }}px;">​{{ info.store.slogan }}</h5>
+                    <h5 style="font-size: {{ info.store.slogan_size }}px; line-height: {{ info.store.slogan_size }}px;{% if info.store.slogan_color %} color: #{{ info.store.slogan_color }};{% endif %}">​{{ info.store.slogan }}</h5>
                 </div>
             </div>
             {% endif %}
 
             {% if info.products %}
-            <div class="row">
+            {% if info.store.content_color %}<style>.store_content th, .store_content td, .store_content a, .store_content a:hover { color: #{{ info.store.content_color }}; }</style>{% endif %}
+
+            <div class="row store_content">
                 <div class="col-xs-12">
                     <table id="store_table">
                         <thead>

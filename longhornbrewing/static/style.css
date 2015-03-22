@@ -300,8 +300,7 @@ section {
 a {
   text-decoration: underline;
 }
-ins,
-a:hover {
+ins, a:hover {
   text-decoration: none;
 }
 footer,
@@ -431,6 +430,7 @@ header#header ul.right {
 .month-arrow-right a, .month-arrow-left a {
   display: block;
   color: #000 !important;
+  text-decoration: none;
 }
   /*------------------------------------------------------------------
     [5.1.01 typography]
@@ -1431,7 +1431,7 @@ footer p.copy {
 }
 .color-scheme-1 a:hover {
   color: #fff;
-  text-decoration: underline;
+  //text-decoration: underline;
 }
 .color-scheme-1 h1.big-heading,
 .color-scheme-1 h2.big-heading {
@@ -3164,7 +3164,7 @@ footer p.copy {
 }
 .color-scheme-7 a:hover {
   //color: #c4b49a;
-  text-decoration: underline;
+  //text-decoration: underline;
 }
 .color-scheme-7 h1.big-heading,
 .color-scheme-7 h2.big-heading {
@@ -6759,7 +6759,7 @@ footer p.copy {
     -webkit-box-shadow: 0px 3px 12px rgba(50, 50, 50, 0.3);
     -moz-box-shadow: 0px 3px 12px rgba(50, 50, 50, 0.3);
     box-shadow: 0px 3px 12px rgba(50, 50, 50, 0.3);
-    transition: top 0.5s;
+    //transition: top 0.5s;
   }
   .section {
     padding-top: 180px;

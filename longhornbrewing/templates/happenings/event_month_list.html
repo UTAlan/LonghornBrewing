@@ -10,17 +10,19 @@
 
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            {% if eventspage.title %}<h1 style="font-size: {{ eventspage.title_size }}px;">{{ eventspage.title }}</h1>{% endif %}
+            {% if eventspage.title %}<h1 style="font-size: {{ eventspage.title_size }}px; line-height: {{ eventspage.title_size }}px;{% if eventspage.title_color %} color: #{{ eventspage.title_color }};{% endif %}">{{ eventspage.title }}</h1>{% endif %}
 
             {% if eventspage.slogan %}
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
-                    <h5 style="font-size: {{ eventspage.slogan_size }}px;">​{{ eventspage.slogan }}</h5>
+                    <h5 style="font-size: {{ eventspage.slogan_size }}px; line-height: {{ eventspage.slogan_size }}px;{% if eventspage.slogan_color %} color: #{{ eventspage.slogan_color }};{% endif %}">​{{ eventspage.slogan }}</h5>
                 </div>
             </div>
             {% endif %}
 
-            <div class="row">
+            {% if contactinfo.content_color %}<style>.events_content h6, .events_content p, .events_content a, .events_content a:hover { color: #{{ contactinfo.content_color }}; }</style>{% endif %}
+
+            <div class="row events_content">
                 <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-0">
                     <div id="event-calendar">
                         {% show_my_calendar request %}

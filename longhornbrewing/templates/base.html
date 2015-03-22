@@ -17,8 +17,6 @@
     ++++++++++++++++++++++++++++++++++++++ -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/swipebox.min.css' %}" />
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <!-- Google fonts
@@ -43,16 +41,19 @@
 </head>
 <body>
 <div id="wrapper">
+
+    {% if page_colors.nav_color %}
     <style>
-    header#header, footer { background: #{{ bg_header.color_code }} !important; }
-    #wrapper > section, div.left, div.right { background: #{{ bg_body.color_code }} !important; }
-    div.left, div.right {  }
+        #nav-menu ul li a, footer, footer h5, footer h6, footer a, footer a:hover { color: #{{ page_colors.nav_color }} !important; }
+        #nav-menu ul li a:hover { color: #{{ page_colors.nav_hover_color }} !important; }
+        header#header, footer, header#header nav#nav-menu ul li, header#header nav#nav-menu ul li:first-child { border-color: #{{ page_colors.border_color }}; }
     </style>
+    {% endif %}
 
     <header id="header" class="color-scheme-8 switcher-item-1">
         <div class="container">
             <div class="row">
-                <a href="/" id="logo" class="animated"><img src="{% static 'images/logo_bw.png' %}" alt=""></a>
+                <a href="/" id="logo" class="animated"><img src="{% static 'images/logo.png' %}" alt=""></a>
                 <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-3 col-lg-9 col-lg-offset-3">
                 	<input type="checkbox" name="menu-icon-chbox" id="menu-icon-chbox" />
                 	<label id="menu-icon" for="menu-icon-chbox"></label>
@@ -96,7 +97,7 @@
             </li>
             <li class="hours">
                 {% if contactinfo.business_hours_title %}<h5 class="wow zoomIn">{{ contactinfo.business_hours_title }}</h5>{% endif %}
-                {% if contactinfo.business_hours %}<p>{{ contactinfo.business_hours|linebreaksbr }}</p>{% endif %}
+                {% if contactinfo.business_hours %}<p>{{ contactinfo.business_hours|safe }}</p>{% endif %}
             </li>
             <li class="events">
                 <h5 class="wow zoomIn">Upcoming Events</h5>

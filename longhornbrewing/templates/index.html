@@ -3,9 +3,11 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            {% if info.homepage.title %}<h1 id="home"{% if info.homepage.title_size %} style="font-size: {{ info.homepage.title_size }}px; line-height: {{ info.homepage.title_size }}px;"{% endif %}>{{ info.homepage.title }}</h1>{% endif %}
+            {% if info.homepage.title %}<h1 id="home"{% if info.homepage.title_size %} style="font-size: {{ info.homepage.title_size }}px; line-height: {{ info.homepage.title_size }}px;{% if info.homepage.title_color %} color: #{{ info.homepage.title_color }};{% endif %}{% if info.homepage.title_font %} font-family: {{ info.homepage.title_font }};{% endif %}"{% endif %}>{{ info.homepage.title }}</h1>{% endif %}
 
             {% if info.slideritems %}
+            {% if page_colors.slider_color %}<style>.color-scheme-1 .owl-carousel .owl-pagination .owl-page.active { background: #{{ page_colors.slider_active_color }}; } .color-scheme-1 .owl-carousel .owl-pagination .owl-page { background: #{{ page_colors.slider_color }}; }</style>{% endif %}
+
             <div class="row">
                 <div class="col-xs-12">
                     <div id="home-slider" class="owl-carousel">
@@ -17,12 +19,12 @@
                         </div>
                         {% endfor %}
                     </div>
-	    {% endif %}
+            {% endif %}
 
             {% if info.homepage.slogan %}
             <div class="row">
                 <div class="col-xs-12">
-                    <h5{% if info.homepage.slogan_size %} style="font-size: {{ info.homepage.slogan_size }}px; line-height: {{ info.homepage.slogan_size }}px;"{% endif %}>​{{ info.homepage.slogan }}</h5>
+                    <h5{% if info.homepage.slogan_size %} style="font-size: {{ info.homepage.slogan_size }}px; line-height: {{ info.homepage.slogan_size }}px;{% if info.homepage.slogan_color %} color: #{{ info.homepage.slogan_color }};{% endif %}"{% endif %}>​{{ info.homepage.slogan }}</h5>
                 </div>
             </div>
             {% endif %}
