@@ -48,6 +48,17 @@
     {% if page_colors.footer_color %}<style>footer, footer a, footer a:hover, footer h6 { color: #{{ page_colors.footer_color }} !important; }</style>{% endif %}
     {% if page_colors.footer_header_color %}<style>footer h5 { color: #{{ page_colors.footer_header_color }} !important; }</style>{% endif %}
 
+    <style>
+        header#header, footer {
+            {% if bg_header.use_image %}background: transparent url('{{ bg_header.image.url }}') !important;
+            {% else %}background: #{{ bg_header.color_code }} !important;{% endif %}
+        }
+        .color-scheme-1, #wrapper > .section, #wrapper > .section > .half-pattern, #wrapper > .section > .contents, .color-scheme-1 .rotate:before {
+            {% if bg_body.use_image %}background: transparent url('{{ bg_body.image.url }}') !important;
+            {% else %}background: #{{ bg_body.color_code }} !important;{% endif %}
+        }
+    </style>
+
     <header id="header" class="color-scheme-8 switcher-item-1">
         <div class="container">
             <div class="row">
