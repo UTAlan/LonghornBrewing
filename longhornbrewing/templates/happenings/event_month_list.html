@@ -20,7 +20,8 @@
             </div>
             {% endif %}
 
-            {% if contactinfo.content_color %}<style>.events_content h6, .events_content p, .events_content a, .events_content a:hover { color: #{{ contactinfo.content_color }}; }</style>{% endif %}
+            {% if eventspage.header_color %}<style>.events_content h6 { color: #{{ eventspage.header_color }}; }</style>{% endif %}
+            {% if eventspage.content_color %}<style>.events_content p, .events_content a, .events_content a:hover { color: #{{ eventspage.content_color }}; }</style>{% endif %}
 
             <div class="row events_content">
                 <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-0">

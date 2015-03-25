@@ -24,7 +24,6 @@ from bs4 import BeautifulSoup
 def index(request):
     info = {}
 
-    info['homepage'] = HomePage.objects.get(id=1)
     info['slideritems'] = SliderItem.objects.filter(active=True).order_by('order').order_by('name')
 
     return render(request, 'index.html', { 'info': info })

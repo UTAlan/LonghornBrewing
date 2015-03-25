@@ -5,6 +5,7 @@ def contact_info(request):
     from bgs.models import Background
     from homepage.models import HomePage
     from findus.models import FindUs
+    from store.models import Store
 
     contactinfo = Contact.objects.get(id=1)
     eventspage = Event.objects.get(id=1)
@@ -13,5 +14,6 @@ def contact_info(request):
     bg_body = Background.objects.get(id=2)
     page_colors = HomePage.objects.get(id=1)
     find_us = FindUs.objects.get(id=1)
+    store = Store.objects.get(id=1)
 
-    return { 'contactinfo': contactinfo, 'eventspage': eventspage, 'sociallinks': sociallinks, 'bg_header': bg_header, 'bg_body': bg_body, 'page_colors': page_colors , 'find_us': find_us }
+    return { 'contactinfo': contactinfo, 'eventspage': eventspage, 'sociallinks': sociallinks, 'bg_header': bg_header, 'bg_body': bg_body, 'page_colors': page_colors, 'find_us': find_us, 'store': store }

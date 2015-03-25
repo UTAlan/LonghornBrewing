@@ -11,18 +11,19 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            {% if info.store.title %}<h1 id="home" style="font-size: {{ info.store.title_size }}px; line-height: {{ info.store.title_size }}px;{% if info.store.title_color %} color: #{{ info.store.title_color }};{% endif %}{% if info.store.title_font %} font-family: {{ info.store.title_font }};{% endif %}">{{ info.store.title }}</h1>{% endif %}
+            {% if store.title %}<h1 id="home" style="font-size: {{ store.title_size }}px; line-height: {{ store.title_size }}px;{% if store.title_color %} color: #{{ store.title_color }};{% endif %}{% if store.title_font %} font-family: {{ store.title_font }};{% endif %}">{{ store.title }}</h1>{% endif %}
 
-            {% if info.store.slogan %}
+            {% if store.slogan %}
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
-                    <h5 style="font-size: {{ info.store.slogan_size }}px; line-height: {{ info.store.slogan_size }}px;{% if info.store.slogan_color %} color: #{{ info.store.slogan_color }};{% endif %}">​{{ info.store.slogan }}</h5>
+                    <h5 style="font-size: {{ store.slogan_size }}px; line-height: {{ store.slogan_size }}px;{% if store.slogan_color %} color: #{{ store.slogan_color }};{% endif %}">​{{ store.slogan }}</h5>
                 </div>
             </div>
             {% endif %}
 
             {% if info.products %}
-            {% if info.store.content_color %}<style>.store_content th, .store_content td, .store_content a, .store_content a:hover { color: #{{ info.store.content_color }}; }</style>{% endif %}
+            {% if store.header_color %}<style>.store_content th { color: #{{ store.header_color }}; }</style>{% endif %}
+            {% if store.content_color %}<style>.store_content td, .store_content a, .store_content a:hover { color: #{{ store.content_color }}; }</style>{% endif %}
 
             <div class="row store_content">
                 <div class="col-xs-12">

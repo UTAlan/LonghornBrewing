@@ -17,7 +17,8 @@
             </div>
             {% endif %}
 
-            {% if contactinfo.content_color %}<style>.contact_content h4, .contact_content p, .contact_content a, .contact_content a:hover { color: #{{ contactinfo.content_color }}; }</style>{% endif %}
+            {% if contactinfo.header_color %}<style>.contact_content h4 { color: #{{ contactinfo.header_color }}; }</style>{% endif %}
+            {% if contactinfo.content_color %}<style>.contact_content p, .contact_content a, .contact_content a:hover { color: #{{ contactinfo.content_color }}; }</style>{% endif %}
 
             <div class="row contact_content">
                 <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">

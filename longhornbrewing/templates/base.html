@@ -42,13 +42,11 @@
 <body>
 <div id="wrapper">
 
-    {% if page_colors.nav_color %}
-    <style>
-        #nav-menu ul li a, footer, footer h5, footer h6, footer a, footer a:hover { color: #{{ page_colors.nav_color }} !important; }
-        #nav-menu ul li a:hover { color: #{{ page_colors.nav_hover_color }} !important; }
-        header#header, footer, header#header nav#nav-menu ul li, header#header nav#nav-menu ul li:first-child { border-color: #{{ page_colors.border_color }}; }
-    </style>
-    {% endif %}
+    {% if page_colors.nav_color %}<style>#nav-menu ul li a { color: #{{ page_colors.nav_color }} !important; }</style>{% endif %}
+    {% if page_colors.nav_hover_color %}<style>#nav-menu ul li a:hover { color: #{{ page_colors.nav_hover_color }} !important; }</style>{% endif %}
+    {% if page_colors.border_color %}<style>header#header, footer, header#header nav#nav-menu ul li, header#header nav#nav-menu ul li:first-child { border-color: #{{ page_colors.border_color }} !important; }</style>{% endif %}
+    {% if page_colors.footer_color %}<style>footer, footer a, footer a:hover, footer h6 { color: #{{ page_colors.footer_color }} !important; }</style>{% endif %}
+    {% if page_colors.footer_header_color %}<style>footer h5 { color: #{{ page_colors.footer_header_color }} !important; }</style>{% endif %}
 
     <header id="header" class="color-scheme-8 switcher-item-1">
         <div class="container">
@@ -62,7 +60,7 @@
                 	        <li><a href="/">THE BREWERY</a></li>
                 	        <li><a href="/beers">OUR BEERS</a></li>
                 	        <li><a href="/events">EVENTS</a></li>
-                	        <li><a href="/store">STORE</a></li>
+                	        {% if store.public %}<li><a href="/store">STORE</a></li>{% endif %}
                 	        {% if find_us.public %}<li><a href="/find-our-beer">FIND OUR BEER</a></li>{% endif %}
                 	        <li><a href="/contact">CONTACT US</a></li>
                 	    </ul>
