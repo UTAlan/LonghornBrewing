@@ -10,26 +10,23 @@
 
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            {% if eventspage.title %}<h1 style="font-size: {{ eventspage.title_size }}px; line-height: {{ eventspage.title_size }}px;{% if eventspage.title_color %} color: #{{ eventspage.title_color }};{% endif %}">{{ eventspage.title }}</h1>{% endif %}
+            {% if eventspage.title %}<h1 id="page_title">{{ eventspage.title }}</h1>{% endif %}
 
             {% if eventspage.slogan %}
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
-                    <h5 style="font-size: {{ eventspage.slogan_size }}px; line-height: {{ eventspage.slogan_size }}px;{% if eventspage.slogan_color %} color: #{{ eventspage.slogan_color }};{% endif %}">​{{ eventspage.slogan }}</h5>
+                    <h5 id="slogan">​{{ eventspage.slogan }}</h5>
                 </div>
             </div>
             {% endif %}
 
-            {% if eventspage.header_color %}<style>.events_content h6 { color: #{{ eventspage.header_color }}; }</style>{% endif %}
-            {% if eventspage.content_color %}<style>.events_content p, .events_content a, .events_content a:hover { color: #{{ eventspage.content_color }}; }</style>{% endif %}
-
-            <div class="row events_content">
+            <div class="row">
                 <div class="col-xs-12 col-xs-offset-0 col-sm-8 col-sm-offset-0">
                     <div id="event-calendar">
                         {% show_my_calendar request %}
                     </div>
                 </div>
-                <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0">
+                <div class="col-xs-8 col-xs-offset-2 col-sm-4 col-sm-offset-0" id="page_content">
                     <div id="event_display">
                         {% upcoming_events num=1 %}
                     </div>

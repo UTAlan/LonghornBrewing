@@ -42,11 +42,27 @@
 <body>
 <div id="wrapper">
 
-    {% if page_colors.nav_color %}<style>#nav-menu ul li a { color: #{{ page_colors.nav_color }} !important; }</style>{% endif %}
-    {% if page_colors.nav_hover_color %}<style>#nav-menu ul li a:hover { color: #{{ page_colors.nav_hover_color }} !important; }</style>{% endif %}
-    {% if page_colors.border_color %}<style>header#header, footer, header#header nav#nav-menu ul li, header#header nav#nav-menu ul li:first-child { border-color: #{{ page_colors.border_color }} !important; }</style>{% endif %}
-    {% if page_colors.footer_color %}<style>footer, footer a, footer a:hover, footer h6 { color: #{{ page_colors.footer_color }} !important; }</style>{% endif %}
-    {% if page_colors.footer_header_color %}<style>footer h5 { color: #{{ page_colors.footer_header_color }} !important; }</style>{% endif %}
+    {% if page_style.nav_color %}<style>#nav-menu ul li a { color: #{{ page_style.nav_color }} !important; }</style>{% endif %}
+    {% if page_style.nav_hover_color %}<style>#nav-menu ul li a:hover { color: #{{ page_style.nav_hover_color }} !important; }</style>{% endif %}
+    {% if page_style.nav_font %}<style>#nav-menu ul li a { font-family: "{{ page_style.nav_font }}" !important; }</style>{% endif %}
+
+    {% if page_style.title_color %}<style>h1#page_title { color: #{{ page_style.title_color }} !important; }</style>{% endif %}
+    {% if page_style.title_font %}<style>h1#page_title { font-family: "{{ page_style.title_font }}" !important; }</style>{% endif %}
+    {% if page_style.title_size %}<style>h1#page_title { font-size: {{ page_style.title_size }}px !important; }</style>{% endif %}
+
+    {% if page_style.slogan_color %}<style>h5#slogan { color: #{{ page_style.slogan_color }} !important; }</style>{% endif %}
+    {% if page_style.slogan_size %}<style>h5#slogan { font-size: {{ page_style.slogan_size }}px !important; }</style>{% endif %}
+
+    {% if page_style.header_color %}<style>#page_content h1, #page_content h2, #page_content h3, #page_content h4, #page_content h5, #page_content h6 { color: #{{ page_style.header_color }} !important; }</style>{% endif %}
+    {% if page_style.header_font %}<style>#page_content h1, #page_content h2, #page_content h3, #page_content h4, #page_content h5, #page_content h6 { font-family: "{{ page_style.header_font }}" !important; }</style>{% endif %}
+
+    {% if page_style.content_color %}<style>#page_content p, #page_content blockquote, #page_content th, #page_content td, #page_content a, #page_content a:hover { color: #{{ page_style.content_color }} !important; }</style>{% endif %}
+    {% if page_style.content_font %}<style>#page_content p, #page_content blockquote, #page_content th, #page_content td, #page_content a, #page_content a:hover { font-family: "{{ page_style.content_font }}" !important; }</style>{% endif %}
+
+    {% if page_style.footer_header_color %}<style>footer h5 { color: #{{ page_style.footer_header_color }} !important; }</style>{% endif %}
+    {% if page_style.footer_content_color %}<style>footer, footer a, footer a:hover, footer h6 { color: #{{ page_style.footer_content_color }} !important; }</style>{% endif %}
+
+    {% if page_style.border_color %}<style>header#header, footer, header#header nav#nav-menu ul li, header#header nav#nav-menu ul li:first-child { border-color: #{{ page_style.border_color }} !important; }</style>{% endif %}
 
     <style>
         header#header, footer {

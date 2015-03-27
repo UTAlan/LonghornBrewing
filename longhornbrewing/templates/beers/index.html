@@ -7,32 +7,31 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            {% if info.ourbeer.title %}<h1 style="font-size: {{ info.ourbeer.title_size }}px; line-height: {{ info.ourbeer.title_size }}px;{% if info.ourbeer.title_color %} color: #{{ info.ourbeer.title_color }};{% endif %}{% if info.ourbeer.title_font %} font-family: {{ info.ourbeer.title_font }};{% endif %}">{{ info.ourbeer.title }}</h1>{% endif %}
+            {% if info.ourbeer.title %}<h1 id="page_title">{{ info.ourbeer.title }}</h1>{% endif %}
 
             {% if info.ourbeer.slogan %}
             <div class="row">
                 <div class="col-xs-10 col-xs-offset-1">
-                    <h5 style="font-size: {{ info.ourbeer.slogan_size }}px; line-height: {{ info.ourbeer.slogan_size }}px;{% if info.ourbeer.slogan_color %} color: #{{ info.ourbeer.slogan_color }};{% endif %}">​{{ info.ourbeer.slogan }}</h5>
+                    <h5 id="slogan">​{{ info.ourbeer.slogan }}</h5>
                 </div>
             </div>
             {% endif %}
 
-            {% if info.ourbeer.header_color %}<style>.beer_content h5 { color: #{{ info.ourbeer.header_color }} !important; }</style>{% endif %}
-            {% if info.ourbeer.content_color %}<style>.beer_content p { color: #{{ info.ourbeer.content_color }} !important; }</style>{% endif %}
-
-            {% for beer in info.beers %}
-            <div class="row beer_content" style="margin-bottom: 50px">
-                <div class="col-xs-10 col-xs-offset-1">
-                    {% if beer.name %}<h5 class="beer_name" style="font-size: {{ beer.name_size }}px; line-height: {{ beer.name_size }}px;{% if info.ourbeer.title_color %} color: #{{ beer.name_color }};{% endif %}">{{ beer.name }}</h5>{% endif %}
+            <div id="page_content">
+                {% for beer in info.beers %}
+                <div class="row beer_content" style="margin-bottom: 50px">
+                    <div class="col-xs-10 col-xs-offset-1">
+                        {% if beer.name %}<h5 class="beer_name" style="font-size: {{ beer.name_size }}px; line-height: {{ beer.name_size }}px;{% if info.ourbeer.title_color %} color: #{{ beer.name_color }};{% endif %}">{{ beer.name }}</h5>{% endif %}
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-1">
+                        {% if beer.image %}<p><img src="{{ beer.image.url }}" alt="{{ beer.name }}" class="beer" /></p>{% endif %}
+                    </div>
+                    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1">
+                        {% if beer.description %}<p>{{ beer.description|safe }}</p>{% endif %}
+                    </div>
                 </div>
-                <div class="col-xs-10 col-xs-offset-1 col-sm-3 col-sm-offset-1">
-                    {% if beer.image %}<p><img src="{{ beer.image.url }}" alt="{{ beer.name }}" class="beer" /></p>{% endif %}
-                </div>
-                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-1">
-                    {% if beer.description %}<p>{{ beer.description|safe }}</p>{% endif %}
-                </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </section>
 {% endblock %}

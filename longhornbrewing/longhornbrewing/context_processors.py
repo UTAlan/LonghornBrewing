@@ -3,7 +3,7 @@ def contact_info(request):
     from eventspage.models import Event
     from sociallinks.models import SocialLink
     from bgs.models import Background
-    from homepage.models import HomePage
+    from pagestyle.models import PageStyle
     from findus.models import FindUs
     from store.models import Store
 
@@ -12,8 +12,8 @@ def contact_info(request):
     sociallinks = SocialLink.objects.filter(public=True).order_by('order')
     bg_header = Background.objects.get(id=1)
     bg_body = Background.objects.get(id=2)
-    page_colors = HomePage.objects.get(id=1)
+    page_style = PageStyle.objects.filter(active=True)
     find_us = FindUs.objects.get(id=1)
     store = Store.objects.get(id=1)
 
-    return { 'contactinfo': contactinfo, 'eventspage': eventspage, 'sociallinks': sociallinks, 'bg_header': bg_header, 'bg_body': bg_body, 'page_colors': page_colors, 'find_us': find_us, 'store': store }
+    return { 'contactinfo': contactinfo, 'eventspage': eventspage, 'sociallinks': sociallinks, 'bg_header': bg_header, 'bg_body': bg_body, 'page_style': page_style[0], 'find_us': find_us, 'store': store }

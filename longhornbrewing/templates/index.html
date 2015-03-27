@@ -3,10 +3,10 @@
 {% block content %}
     <section class="section section-first priority-1 color-scheme-1 transition-form switcher-item-2">
         <div class="container">
-            {% if page_colors.title %}<h1 id="home"{% if page_colors.title_size %} style="font-size: {{ page_colors.title_size }}px; line-height: {{ page_colors.title_size }}px;{% if page_colors.title_color %} color: #{{ page_colors.title_color }};{% endif %}{% if page_colors.title_font %} font-family: {{ page_colors.title_font }};{% endif %}"{% endif %}>{{ page_colors.title }}</h1>{% endif %}
+            {% if info.homepage.title %}<h1 id="page_title">{{ info.homepage.title }}</h1>{% endif %}
 
             {% if info.slideritems %}
-            {% if page_colors.slider_color %}<style>.color-scheme-1 .owl-carousel .owl-pagination .owl-page.active { background: #{{ page_colors.slider_active_color }}; } .color-scheme-1 .owl-carousel .owl-pagination .owl-page { background: #{{ page_colors.slider_color }}; }</style>{% endif %}
+            {% if info.homepage.slider_color %}<style>.color-scheme-1 .owl-carousel .owl-pagination .owl-page.active { background: #{{ info.homepage.slider_active_color }}; } .color-scheme-1 .owl-carousel .owl-pagination .owl-page { background: #{{ info.homepage.slider_color }}; }</style>{% endif %}
 
             <div class="row">
                 <div class="col-xs-12">
@@ -21,23 +21,20 @@
                     </div>
             {% endif %}
 
-            {% if page_colors.slogan %}
+            {% if info.homepage.slogan %}
             <div class="row">
                 <div class="col-xs-12">
-                    <h5{% if page_colors.slogan_size %} style="font-size: {{ page_colors.slogan_size }}px; line-height: {{ page_colors.slogan_size }}px;{% if page_colors.slogan_color %} color: #{{ page_colors.slogan_color }};{% endif %}"{% endif %}>​{{ page_colors.slogan }}</h5>
+                    <h5 id="slogan">​{{ info.homepage.slogan }}</h5>
                 </div>
             </div>
             {% endif %}
 
-            {% if page_colors.header_color %}<style>.home_content h1, .home_content h2, .home_content h3, .home_content h4, .home_content h5, .home_content h6 { color: #{{ page_colors.header_color }}; }</style>{% endif %}
-            {% if page_colors.content_color %}<style>.home_content p, .home_content blockquote { color: #{{ page_colors.content_color }}; }</style>{% endif %}
-
-            <div class="row home_content">
+            <div class="row" id="page_content">
                 <div class="col-xs-12 col-sm-5 col-sm-offset-1">
-                    {{ page_colors.content_left|safe }}
+                    {{ info.homepage.content_left|safe }}
                 </div>
                 <div class="col-xs-12 col-sm-5 col-sm-offset-1">
-                    {{ page_colors.content_right|safe }}
+                    {{ info.homepage.content_right|safe }}
                 </div>
             </div>
         </div>

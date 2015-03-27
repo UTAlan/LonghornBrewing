@@ -18,6 +18,7 @@ INSTALLED_APPS = (
     'store',
     'contact',
     'findus',
+    'pagestyle',
     'sociallinks',
     'copyright',
     'tinymce',
