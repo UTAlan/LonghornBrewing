@@ -25,8 +25,4 @@ urlpatterns = patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root': settings.MEDIA_ROOT }),
 )
 
-urlpatterns += patterns('django.contrib.staticfiles.views',
-    url(r'^(?:googlef5c8055e27343afa.html)?$', 'serve', kwargs={'path': 'googlef5c8055e27343afa.html'}),
-)
-
 urlpatterns += staticfiles_urlpatterns()
