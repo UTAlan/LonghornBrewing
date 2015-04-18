@@ -169,3 +169,6 @@ class EventMonthView(GenericEventView):
                 if self.request.is_ajax() else c.order_events(all_month_events)
 
         return context
+
+def custom_404(request):
+    return render_to_response('404.html')

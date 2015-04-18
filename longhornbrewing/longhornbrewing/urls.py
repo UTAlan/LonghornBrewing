@@ -31,3 +31,5 @@ urlpatterns += patterns('django.contrib.staticfiles.views',
 )
 
 urlpatterns += staticfiles_urlpatterns()
+
+handler404 = 'app.views.custom_404'
