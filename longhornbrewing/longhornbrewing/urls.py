@@ -27,6 +27,7 @@ urlpatterns = patterns('',
 
 urlpatterns += patterns('django.contrib.staticfiles.views',
     url(r'^(?:sitemap.xml)?$', 'serve', kwargs={'path': 'sitemap.xml'}),
+    url(r'^(?:robots.txt)?$', 'serve', kwargs={'path': 'robots.txt'}),
 )
 
 urlpatterns += staticfiles_urlpatterns()
