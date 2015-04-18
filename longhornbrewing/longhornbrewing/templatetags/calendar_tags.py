@@ -66,6 +66,8 @@ def show_my_calendar(req, mini=False):
         tag.insert(2, event_description)
 
         idx -= 1
+        if idx < 0:
+            idx = 0
 
 
     return soup.prettify()
