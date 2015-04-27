@@ -4,6 +4,8 @@ from tinymce import models as tinymce_models
 class FindUs(models.Model):
     title = models.CharField(max_length=200,blank=True)
     slogan = models.CharField(max_length=200,blank=True)
+    map_width = models.IntegerField(default=600)
+    map_height = models.IntegerField(default=400)
     page_content = tinymce_models.HTMLField(blank=True)
     public = models.BooleanField(default=False)
 

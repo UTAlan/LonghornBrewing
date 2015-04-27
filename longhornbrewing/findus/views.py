@@ -5,6 +5,6 @@ from findus.models import FindUs, Location
 def index(request):
     info = {}
 
-    info['locations'] = OurBeer.objects.get(public='true')
+    info['locations'] = Location.objects.filter(public=True)
 
-    return render_to_response('findus/index.html', { }, context_instance=RequestContext(request))
+    return render_to_response('findus/index.html', { 'info': info }, context_instance=RequestContext(request))
