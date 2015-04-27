@@ -12,3 +12,11 @@ class FindUs(models.Model):
 
     class Meta:
         verbose_name_plural = "Find Us"
+
+class Location(models.Model):
+    name = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    public = models.BooleanField(default=True)
+
+    def __unicode__(self):
+        return self.name
