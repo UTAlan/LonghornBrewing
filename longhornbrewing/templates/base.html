@@ -64,6 +64,7 @@
     {% if page_style.title_size %}<style>h1#page_title { font-size: {{ page_style.title_size }}px !important; }</style>{% endif %}
 
     {% if page_style.slogan_color %}<style>h5#slogan { color: #{{ page_style.slogan_color }} !important; }</style>{% endif %}
+    {% if page_style.slogan_font %}<style>h5#slogan { font-family: "{{ page_style.slogan_font }}" !important; }</style>{% endif %}
     {% if page_style.slogan_size %}<style>h5#slogan { font-size: {{ page_style.slogan_size }}px !important; }</style>{% endif %}
 
     {% if page_style.header_color %}<style>#page_content h1, #page_content h2, #page_content h3, #page_content h4, #page_content h5, #page_content h6 { color: #{{ page_style.header_color }} !important; }</style>{% endif %}

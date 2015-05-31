@@ -9,6 +9,7 @@ class PageStyle(models.Model):
     title_font = models.CharField(max_length=200,blank=True)
     title_size = models.IntegerField(default=0)
     slogan_color = models.CharField(max_length=200,blank=True)
+    slogan_font = models.CharField(max_length=200,blank=True)
     slogan_size = models.IntegerField(default=0)
     header_color = models.CharField(max_length=200,blank=True)
     header_font = models.CharField(max_length=200,blank=True)
