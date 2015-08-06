@@ -5,3 +5,5 @@ local_settings.py
 *.pyc
 
 passenger_wsgi.py
+
+build/
