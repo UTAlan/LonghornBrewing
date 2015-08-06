@@ -48,10 +48,17 @@ def show_my_calendar(req, mini=False):
             tag.unwrap()
 
     # Fix formatting for Events
-    idx = len(all_month_events) - 1
     for tag in soup.select('div.calendar-event'):
+        event_id = tag.parent.get("href")[16:-1]
+
+        idx = 0
+        while idx < len(all_month_events) and str(all_month_events[idx].id) != event_id:
+            idx += 1
+        if idx == len(all_month_events):
+            idx = 0
+
         event_title = soup.new_tag('div')
-        event_title['class'] = ['event_title', 'hidden']
+        event_title['class'] = ['event_title', 'hidden', 'event_id_' + str(all_month_events[idx].id)]
         event_title.string = all_month_events[idx].title
         tag.insert(0, event_title)
 
@@ -65,12 +72,4 @@ def show_my_calendar(req, mini=False):
         event_description.string = all_month_events[idx].description
         tag.insert(2, event_description)
 
-        idx -= 1
-        if idx < 0:
-            idx = 0
-
-
     return soup.prettify()
-
-def has_no_class(tag):
-    return not tag.has_attr('class')
