@@ -105,37 +105,17 @@ class EventMonthView(GenericEventView):
                 tag.unwrap()
 
         # Fix formatting for Events
-        for ev in all_month_events:
-            tag = soup.find(attrs={ "title": ev.title })
-
-            if tag:
-                event_title = soup.new_tag('div')
-                event_title['class'] = ['event_title', 'hidden']
-                event_title.string = ev.title
-                tag.insert(0, event_title)
-
-                event_date = soup.new_tag('div')
-                event_date['class'] = ['event_date', 'hidden']
-                event_date.string = ev.start_date.strftime('%B %d, %Y')
-                tag.insert(1, event_date)
-
-                event_description = soup.new_tag('div')
-                event_description['class'] = ['event_description', 'hidden']
-                event_description.string = ev.description
-                tag.insert(2, event_description)
-
-        '''
-        idx = len(all_month_events) - 1
         for tag in soup.select('div.calendar-event'):
-            if incr_set == False and all_month_events[idx].title != tag.title:
-                incr = True
+            event_id = tag.parent.get("href")[16:-1]
+
+            idx = 0
+            while idx < len(all_month_events) and str(all_month_events[idx].id) != event_id:
+                idx += 1
+            if idx == len(all_month_events):
                 idx = 0
 
-            if incr_set == False:
-                incr_set = True
-
             event_title = soup.new_tag('div')
-            event_title['class'] = ['event_title', 'hidden']
+            event_title['class'] = ['event_title', 'hidden', 'event_id_' + str(all_month_events[idx].id)]
             event_title.string = all_month_events[idx].title
             tag.insert(0, event_title)
 
@@ -148,17 +128,6 @@ class EventMonthView(GenericEventView):
             event_description['class'] = ['event_description', 'hidden']
             event_description.string = all_month_events[idx].description
             tag.insert(2, event_description)
-
-            test = soup.new_tag('div')
-            test['class'] = ['event_test', 'hidden']
-            test.string = str(len(all_month_events))
-            tag.insert(3, test)
-
-            if incr == True:
-                idx += 1
-            else:
-                idx -= 1
-        '''
 
         context['calendar'] = soup.prettify()
 
