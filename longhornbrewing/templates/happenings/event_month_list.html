@@ -39,4 +39,6 @@
 
 {% block extra_foot %}
 <script src="{% static 'happenings/js/calendar.js' %}"></script>
+<script>$(function() { $(".td-inner a:first-child").attr("href", "#"); $(".td-inner a:first-child").click(function() { return false; }); });</script>
+<style>.td-inner a:first-child, .td-inner a:first-child:hover { text-decoration: none; color: #000; }</style>
 {% endblock %}

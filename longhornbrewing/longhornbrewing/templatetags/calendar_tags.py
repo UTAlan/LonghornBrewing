@@ -45,9 +45,9 @@ def show_my_calendar(req, mini=False):
     soup = BeautifulSoup(month_display(year, month, all_month_events, start_day, net, qs, mini=mini))
 
     # Remove links from Dates
-    for tag in soup.select('a[href^="/calendar/"]'):
-        if not tag.has_attr('class'):
-            tag.unwrap()
+    #for tag in soup.select('a[href^="/calendar/"]'):
+    #    if not tag.has_attr('class'):
+    #        tag.unwrap()
 
     # Fix formatting for Events
     for tag in soup.select('div.calendar-event'):
@@ -66,10 +66,15 @@ def show_my_calendar(req, mini=False):
 
         event_date = soup.new_tag('div')
         event_date['class'] = ['event_date', 'hidden']
-        event_date.string = all_month_events[idx].start_date.strftime('%B %d, %Y')
+        #event_date.string = all_month_events[idx].start_date.strftime('%B %d, %Y')
+        parent = tag.findParent()
+        gparent = parent.findParent()
+        sibling = parent.findPreviousSibling("a")
+        href = sibling.get("href")
+        actual_date_string = href[10:]
         #actual_date_string = tag.findParent().findPreviousSibling("a").get("href")[10:]
-        #actual_date = datetime.strptime(actual_date_string, "%Y/%m/%d")
-        #event_date.string = actual_date.strftime("%B %d, %Y")
+        actual_date = datetime.strptime(actual_date_string, "%Y/%m/%d")
+        event_date.string = actual_date.strftime("%B %d, %Y")
         tag.insert(1, event_date)
 
         event_description = soup.new_tag('div')
