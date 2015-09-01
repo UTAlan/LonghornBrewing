@@ -1,6 +1,6 @@
 SECRET_KEY = 'c+1h2fa6xfr@u^dtt)g(893tn%on^*35s3(a@zqx)+vh+3tz98'
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = False
 
 INSTALLED_APPS = (

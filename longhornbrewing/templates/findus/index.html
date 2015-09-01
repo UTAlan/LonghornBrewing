@@ -30,7 +30,7 @@
 
 {% block extra_foot %}
     {% verbatim %}
-    <style>.section .contents #map-canvas { width: {% endverbatim %}{{ find_us.map_width }}px; height: {{ find_us.map_height }}{% verbatim %}px; margin: 0 auto; border: solid 1px #000; } .section .contents #map-canvas img { max-width: none; }</style>
+    <style>.section .contents #map-canvas { width: 100%; max-width: {% endverbatim %}{{ find_us.map_width }}px; height: {{ find_us.map_height }}{% verbatim %}px; margin: 0 auto; border: solid 1px #000; } .section .contents #map-canvas img { max-width: none; }</style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDurvCj_IXvPD2I01KvfwEGb6UxTLiQLNo"></script>
     <script>
     function initialize() {

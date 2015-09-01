@@ -16,6 +16,8 @@ from happenings.utils.common import (
     now
 )
 
+from datetime import datetime
+
 from bs4 import BeautifulSoup
 
 register = Library()
@@ -65,6 +67,9 @@ def show_my_calendar(req, mini=False):
         event_date = soup.new_tag('div')
         event_date['class'] = ['event_date', 'hidden']
         event_date.string = all_month_events[idx].start_date.strftime('%B %d, %Y')
+        #actual_date_string = tag.findParent().findPreviousSibling("a").get("href")[10:]
+        #actual_date = datetime.strptime(actual_date_string, "%Y/%m/%d")
+        #event_date.string = actual_date.strftime("%B %d, %Y")
         tag.insert(1, event_date)
 
         event_description = soup.new_tag('div')
